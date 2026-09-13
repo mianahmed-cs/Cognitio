@@ -21,12 +21,12 @@ let selectedCourseColor = 'blue';
 
 // Color map for course badges
 const COLOR_MAP = {
-  blue: { bg: 'rgba(41, 151, 255, 0.15)', text: '#2997ff', border: 'rgba(41, 151, 255, 0.3)' },
-  green: { bg: 'rgba(48, 209, 88, 0.15)', text: '#30d158', border: 'rgba(48, 209, 88, 0.3)' },
-  purple: { bg: 'rgba(191, 90, 242, 0.15)', text: '#bf5af2', border: 'rgba(191, 90, 242, 0.3)' },
-  orange: { bg: 'rgba(255, 159, 10, 0.15)', text: '#ff9f0a', border: 'rgba(255, 159, 10, 0.3)' },
-  red: { bg: 'rgba(255, 69, 58, 0.15)', text: '#ff453a', border: 'rgba(255, 69, 58, 0.3)' },
-  teal: { bg: 'rgba(100, 210, 255, 0.15)', text: '#64d2ff', border: 'rgba(100, 210, 255, 0.3)' }
+  blue: { bg: 'rgba(0, 113, 227, 0.1)', text: '#0071e3', border: 'rgba(0, 113, 227, 0.25)' },
+  green: { bg: 'rgba(52, 199, 89, 0.12)', text: '#1b873a', border: 'rgba(52, 199, 89, 0.25)' },
+  purple: { bg: 'rgba(175, 82, 222, 0.12)', text: '#892ebb', border: 'rgba(175, 82, 222, 0.25)' },
+  orange: { bg: 'rgba(255, 149, 0, 0.12)', text: '#c25e00', border: 'rgba(255, 149, 0, 0.25)' },
+  red: { bg: 'rgba(255, 59, 48, 0.1)', text: '#d7261b', border: 'rgba(255, 59, 48, 0.25)' },
+  teal: { bg: 'rgba(48, 176, 199, 0.12)', text: '#0e7490', border: 'rgba(48, 176, 199, 0.25)' }
 };
 
 /**
