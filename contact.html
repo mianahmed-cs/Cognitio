@@ -3,355 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cognitio Student Helpdesk & Support - Get in touch, submit academic feedback, and explore interactive frequently asked questions.">
-  <meta name="author" content="Mian Ahmed - BS CS F24">
-  <title>Contact & Support — Cognitio</title>
+  <title>Contact & Helpdesk - Cognitio</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
-  <!-- ========================================================================
-       Global Apple Frosted Glass Header
-       ======================================================================== -->
+  <!-- Site Header & Navigation Bar -->
   <header class="site-header">
-    <div class="container nav-container">
-      <a href="index.html" class="brand" aria-label="Cognitio Home">
-        <span class="brand-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-        </span>
-        <span>Cognitio</span>
-      </a>
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">Cognitio<span>.</span></a>
 
-      <nav class="nav-menu" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="planner.html" class="nav-link">Planner</a>
-        <a href="timer.html" class="nav-link">Focus Timer</a>
-        <a href="contact.html" class="nav-link active">Contact</a>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="planner.html" class="nav-link">Planner</a></li>
+        <li><a href="timer.html" class="nav-link">Focus Hub</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
 
-      <div class="nav-actions">
-        <a href="planner.html" class="btn btn-primary nav-cta-desktop">Launch Planner</a>
-        <button id="hamburgerBtn" class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-          <div class="hamburger-bars">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
-      </div>
-    </div>
+      <!-- Mobile Hamburger Button -->
+      <button id="hamburgerBtn" class="hamburger" aria-label="Toggle Menu">&#9776;</button>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <ul id="mobileNav" class="mobile-nav">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="planner.html" class="mobile-nav-link">Planner</a></li>
+      <li><a href="timer.html" class="mobile-nav-link">Focus Hub</a></li>
+      <li><a href="contact.html" class="mobile-nav-link active">Contact</a></li>
+    </ul>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <aside id="mobileNav" class="mobile-nav" aria-label="Mobile Navigation">
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
-      <a href="planner.html" class="mobile-nav-link">Planner</a>
-      <a href="timer.html" class="mobile-nav-link">Focus Timer</a>
-      <a href="contact.html" class="mobile-nav-link active">Contact</a>
+  <!-- Main Content -->
+  <main class="container">
+    <div class="text-center" style="margin-bottom: 36px;">
+      <h1>Student Helpdesk & Inquiries</h1>
+      <p style="color: var(--text-muted);">Have questions about using Cognitio or study strategies? Send us a message.</p>
     </div>
-    <div class="mobile-nav-footer">
-      <a href="planner.html" class="btn btn-primary" style="width: 100%;">Open Planner</a>
-    </div>
-  </aside>
 
-  <!-- ========================================================================
-       Main Content
-       ======================================================================== -->
-  <main id="mainContent" class="section-padding-sm">
-    <div class="container">
+    <div class="card" style="max-width: 600px; margin: 0 auto;">
+      <h2 class="card-title">Send a Message</h2>
+      <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">
+        Fill out the form below. Client-side validation checks your inputs before submitting.
+      </p>
 
-      <!-- Page Header -->
-      <section class="text-center" style="max-width: 680px; margin: 0 auto 48px;">
-        <span class="eyebrow" style="color: var(--apple-green);">Student Helpdesk</span>
-        <h1 class="headline-section">We're here to help.</h1>
-        <p class="subheadline" style="margin-top: 10px;">
-          Have questions regarding academic planning techniques, bug reports, or project feedback? Send us a message or browse the interactive FAQ.
-        </p>
-      </section>
-
-      <!-- 2-Column Layout: Contact Form & FAQ -->
-      <div class="contact-layout-grid">
-
-        <!-- Column 1: Client-Side Validated Contact Form -->
-        <section class="contact-card" aria-labelledby="formHeading">
-          <h2 id="formHeading" style="font-size: 1.4rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">
-            Send an Inquiry
-          </h2>
-          <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 24px;">
-            Equipped with real-time client-side regex input validation and instant visual feedback.
-          </p>
-
-          <!-- Success Alert Banner (Shown after valid submission) -->
-          <div id="contactSuccessBanner" class="success-banner-box" role="alert">
-            <div class="success-banner-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-            </div>
-            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px;">
-              Inquiry Dispatched!
-            </h3>
-            <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5;">
-              Thank you, <strong id="successUserName" style="color: var(--text-primary);">Student</strong>! Your message has been received. Our course mentors typically respond within 24 hours.
-            </p>
-            <button id="sendAnotherBtn" class="btn btn-secondary btn-sm" style="margin-top: 14px;">
-              Send Another Inquiry
-            </button>
-          </div>
-
-          <!-- Contact Form -->
-          <form id="contactForm" novalidate>
-            <!-- Full Name -->
-            <div class="form-group" id="groupName">
-              <label for="contactName" class="form-label">Full Name</label>
-              <input type="text" id="contactName" class="form-input" placeholder="e.g. Mian Ahmed" required autocomplete="name">
-              <span class="input-error-msg" id="nameError">Please enter your name (at least 3 alphabetic characters).</span>
-            </div>
-
-            <!-- Email Address -->
-            <div class="form-group" id="groupEmail">
-              <label for="contactEmail" class="form-label">Academic Email Address</label>
-              <input type="email" id="contactEmail" class="form-input" placeholder="e.g. student@pucit.edu.pk" required autocomplete="email">
-              <span class="input-error-msg" id="emailError">Please enter a valid email address (e.g. name@domain.com).</span>
-            </div>
-
-            <!-- Inquiry Category -->
-            <div class="form-group" id="groupCategory">
-              <label for="contactCategory" class="form-label">Inquiry Category</label>
-              <select id="contactCategory" class="form-select" required>
-                <option value="" disabled selected>Select a category...</option>
-                <option value="academic">Course & Revision Strategy</option>
-                <option value="technical">Technical Support & Bug Report</option>
-                <option value="curriculum">Assignment 01 Viva Inquiry</option>
-                <option value="feedback">Product Suggestion</option>
-              </select>
-              <span class="input-error-msg" id="categoryError">Please select a category.</span>
-            </div>
-
-            <!-- Urgency Level -->
-            <div class="form-group">
-              <label class="form-label">Urgency Level</label>
-              <div style="display: flex; gap: 16px; margin-top: 4px;">
-                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text-secondary); cursor: pointer;">
-                  <input type="radio" name="contactUrgency" value="normal" checked style="accent-color: var(--apple-blue);">
-                  Standard
-                </label>
-                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text-secondary); cursor: pointer;">
-                  <input type="radio" name="contactUrgency" value="priority" style="accent-color: var(--apple-orange);">
-                  Elevated Priority
-                </label>
-              </div>
-            </div>
-
-            <!-- Message Textarea -->
-            <div class="form-group" id="groupMessage">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <label for="contactMessage" class="form-label">Detailed Message</label>
-                <span id="messageCharCount" class="char-counter">0 / 300 min</span>
-              </div>
-              <textarea id="contactMessage" class="form-textarea" rows="4" placeholder="Explain your inquiry in detail (minimum 15 characters)..." required></textarea>
-              <span class="input-error-msg" id="messageError">Message must contain at least 15 characters.</span>
-            </div>
-
-            <button type="submit" id="contactSubmitBtn" class="btn btn-primary" style="width: 100%; padding: 12px; margin-top: 8px;">
-              Submit Inquiry
-            </button>
-          </form>
-        </section>
-
-        <!-- Column 2: Interactive Cupertino Accordion & Academic Lab Card -->
-        <div>
-          <!-- Accordion FAQ -->
-          <section class="contact-card" aria-labelledby="faqHeading" style="margin-bottom: 24px;">
-            <div style="margin-bottom: 20px;">
-              <h2 id="faqHeading" style="font-size: 1.4rem; font-weight: 700; color: var(--text-primary);">
-                Frequently Asked Questions
-              </h2>
-              <p style="color: var(--text-secondary); font-size: 0.875rem;">
-                Click any question below to expand the interactive accordion.
-              </p>
-            </div>
-
-            <div class="accordion-container" id="faqAccordion">
-
-              <!-- Accordion Item 1 -->
-              <article class="accordion-item is-open">
-                <button class="accordion-trigger" aria-expanded="true" aria-controls="faq1Content" id="faq1Header">
-                  <span>How does Cognitio save my courses without a database?</span>
-                  <span class="accordion-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <polyline points="6 9 12 15 18 9"/>
-                    </svg>
-                  </span>
-                </button>
-                <div id="faq1Content" class="accordion-body" role="region" aria-labelledby="faq1Header" style="max-height: 200px;">
-                  <div class="accordion-content">
-                    Cognitio leverages the native HTML5 Web Storage API (`localStorage`). All courses and study tasks are serialized to JSON strings and persisted locally in your browser. This ensures 100% student privacy, instant speed, and survival across page refreshes during evaluation.
-                  </div>
-                </div>
-              </article>
-
-              <!-- Accordion Item 2 -->
-              <article class="accordion-item">
-                <button class="accordion-trigger" aria-expanded="false" aria-controls="faq2Content" id="faq2Header">
-                  <span>Why does the planner start with zero courses?</span>
-                  <span class="accordion-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <polyline points="6 9 12 15 18 9"/>
-                    </svg>
-                  </span>
-                </button>
-                <div id="faq2Content" class="accordion-body" role="region" aria-labelledby="faq2Header">
-                  <div class="accordion-content">
-                    To prevent cognitive clutter, Cognitio avoids pre-seeded dummy subjects. Students begin with a clean slate and use the "Add Course" modal to configure their exact semester syllabus with personalized color tags, credit hours, and schedule times.
-                  </div>
-                </div>
-              </article>
-
-              <!-- Accordion Item 3 -->
-              <article class="accordion-item">
-                <button class="accordion-trigger" aria-expanded="false" aria-controls="faq3Content" id="faq3Header">
-                  <span>How does the Pomodoro timer produce audio without audio files?</span>
-                  <span class="accordion-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <polyline points="6 9 12 15 18 9"/>
-                    </svg>
-                  </span>
-                </button>
-                <div id="faq3Content" class="accordion-body" role="region" aria-labelledby="faq3Header">
-                  <div class="accordion-content">
-                    We use the browser's built-in Web Audio API (`AudioContext`). It synthesizes pleasant harmonic frequencies (523.25 Hz and 659.25 Hz sine waves) directly using programmatic oscillators and exponential gain ramps, requiring zero external MP3 downloads.
-                  </div>
-                </div>
-              </article>
-
-              <!-- Accordion Item 4 -->
-              <article class="accordion-item">
-                <button class="accordion-trigger" aria-expanded="false" aria-controls="faq4Content" id="faq4Header">
-                  <span>Is this project fully compliant with Assignment 01?</span>
-                  <span class="accordion-icon" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <polyline points="6 9 12 15 18 9"/>
-                    </svg>
-                  </span>
-                </button>
-                <div id="faq4Content" class="accordion-body" role="region" aria-labelledby="faq4Header">
-                  <div class="accordion-content">
-                    Yes! The project strictly uses semantic HTML5 tags (`header`, `nav`, `main`, `section`, `article`, `footer`, `table`, `form`), modern CSS3 (Flexbox, CSS Grid, media queries), vanilla JavaScript for rich DOM manipulation, and a disciplined Git branching workflow with all feature branches merged into `main`.
-                  </div>
-                </div>
-              </article>
-
-            </div>
-          </section>
-
-          <!-- Academic Lab & Office Hours Card -->
-          <article class="location-card" aria-label="Campus Office Hours">
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-              <div class="brand-icon">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-              </div>
-              <div>
-                <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-primary);">Faculty of Information & Tech</h3>
-                <p style="font-size: 0.8125rem; color: var(--text-secondary);">Department of Computer Science</p>
-              </div>
-            </div>
-
-            <div class="office-hours-list">
-              <div class="office-hours-item">
-                <span><strong>Instructor:</strong> Dr. Noman Shafi</span>
-                <span style="color: var(--apple-blue);">Web Technologies</span>
-              </div>
-              <div class="office-hours-item">
-                <span><strong>Lab Hours:</strong> Tue / Thu</span>
-                <span>10:00 AM - 12:00 PM (Lab 304)</span>
-              </div>
-              <div class="office-hours-item">
-                <span><strong>Viva Defense:</strong> Sep 14, 2026</span>
-                <span style="color: var(--apple-green);">Live Code Walkthrough</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
+      <!-- Success Message Alert -->
+      <div id="contactSuccessMsg" class="alert-success">
+        Thank you! Your inquiry has been validated and sent successfully.
       </div>
 
+      <form id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="userName" class="form-label">Full Name</label>
+          <input type="text" id="userName" class="form-input" placeholder="e.g. Mian Ahmed">
+          <p id="nameError" class="form-error">Please enter your full name.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="userEmail" class="form-label">University Email</label>
+          <input type="email" id="userEmail" class="form-input" placeholder="e.g. student@university.edu">
+          <p id="emailError" class="form-error">Please enter a valid email address.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="userMessage" class="form-label">Message / Question</label>
+          <textarea id="userMessage" class="form-textarea" placeholder="Describe your study challenge or feedback..."></textarea>
+          <p id="messageError" class="form-error">Message field cannot be left blank.</p>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+      </form>
     </div>
   </main>
 
-  <!-- ========================================================================
-       Global Apple-Style Minimalist Footer
-       ======================================================================== -->
+  <!-- Site Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="brand">
-            <span class="brand-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </span>
-            <span>Cognitio</span>
-          </a>
-          <p>
-            An intelligent, minimalist study planner and deep work suite built for computer science students with Cupertino precision.
-          </p>
-          <div style="margin-top: 16px;">
-            <span class="footer-academic-badge">
-              Web Technologies — BS CS F24
-            </span>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html" class="footer-link">Home</a></li>
-            <li><a href="about.html" class="footer-link">About Methodology</a></li>
-            <li><a href="planner.html" class="footer-link">Course Planner</a></li>
-            <li><a href="timer.html" class="footer-link">Focus Timer</a></li>
-            <li><a href="contact.html" class="footer-link">Support & FAQ</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Academic Modules</h4>
-          <ul class="footer-links">
-            <li><a href="planner.html" class="footer-link">Course Enroller</a></li>
-            <li><a href="planner.html" class="footer-link">Sprint Checklist</a></li>
-            <li><a href="timer.html" class="footer-link">Pomodoro Engine</a></li>
-            <li><a href="about.html" class="footer-link">Cognitive Science</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Assignment Specs</h4>
-          <ul class="footer-links">
-            <li><span class="footer-link">Course: Web Tech</span></li>
-            <li><span class="footer-link">Instructor: Dr. Noman Shafi</span></li>
-            <li><span class="footer-link">Batch: BS CS F24</span></li>
-            <li><span class="footer-link">Pure HTML5, CSS3, JS</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Cognitio. Built by Mian Ahmed. Pure Static Implementation.</p>
-        <p>Faculty of Information & Technology</p>
-      </div>
-    </div>
+    <p>&copy; 2026 Cognitio. Built for Web Technologies (BS CS F24)</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/validation.js"></script>
 </body>

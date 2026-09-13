@@ -11,12 +11,9 @@
 
 ## 1. Project Overview
 
-**Cognitio** is a multi-page, static academic productivity and study suite designed for Computer Science students. Built entirely with **semantic HTML5, modern CSS3, and vanilla JavaScript**, the project draws visual inspiration from the **Apple.com design language** (Bento grid layouts, frosted glassmorphic navigation bars, sleek typography, pill-shaped action controls, and an Apple Watch-inspired focus dial).
+**Cognitio** is a multi-page, static academic productivity and study suite designed for Computer Science students. Built entirely with **semantic HTML5, modern CSS3, and vanilla JavaScript**, the project draws visual inspiration from the clean **Apple.com design language** (white light background, dark frosted-glass navigation bar, clean typography, pill-shaped buttons, and rounded cards).
 
-Unlike generic templates, Cognitio is an original static web application featuring:
-- **Zero generic or pre-seeded courses:** The course manager starts 100% clean and allows students to dynamically add, customize, and delete their exact semester syllabus.
-- **Client-Side Privacy:** All data persists locally via the HTML5 `localStorage` API with zero external servers or databases.
-- **Synthesized Audio:** Focus timer chimes generated algorithmically via the Web Audio API without requiring third-party MP3 files.
+The code is intentionally written to be **clean, modular, and easy to reverse engineer**, making every function and style self-explanatory and straightforward to defend during a Viva Voce examination.
 
 ---
 
@@ -24,13 +21,13 @@ Unlike generic templates, Cognitio is an original static web application featuri
 
 | Requirement | Implementation in Cognitio |
 |---|---|
-| **Static Website (HTML, CSS, JS only)** | Pure client-side static application. No backend, Node server, database, or frameworks. |
+| **Static Website (HTML, CSS, JS only)** | Pure client-side static application. No backend, Node server, database, or external frameworks. |
 | **Multi-Page Website (4–5 pages)** | 5 fully interlinked semantic pages: `index.html`, `about.html`, `planner.html`, `timer.html`, `contact.html`. |
-| **Semantic HTML5** | Comprehensive use of `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, forms, lists, and tables. |
-| **Organized CSS** | `css/style.css` (tokens, typography, layout, components) and `css/responsive.css` (adaptive breakpoints). |
-| **Flexbox & CSS Grid** | Flexbox for headers, navigation, cards, and pill controls; CSS Grid for dashboard Bento layouts, statistics, and course cards. |
-| **Responsive Design** | Custom media queries adapting seamlessly to desktop (>1024px), tablet (768px), and mobile (<480px) viewports. |
-| **JavaScript Interactivity** | Dynamic course manager, task sprint checklist, Pomodoro countdown engine, client-side regex form validation, interactive study technique switcher, and accordion FAQ. |
+| **Semantic HTML5** | Comprehensive use of `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`, `<form>`, `<ul>`, and `<li>`. |
+| **Organized CSS** | `css/style.css` (clean tokens, typography, layout, components) and `css/responsive.css` (adaptive media queries). |
+| **Flexbox & CSS Grid** | Flexbox for header, navbar, controls, and task rows; CSS Grid for cards (`.grid-2`, `.grid-3`). |
+| **Responsive Design** | Custom media queries adapting seamlessly to desktop (>768px), tablet (768px), and mobile (<480px) viewports. |
+| **JavaScript Interactivity** | Dynamic course manager, task sprint checklist, Pomodoro countdown engine, client-side regex form validation, interactive study technique switcher, and mobile navigation drawer. |
 | **Git & Version Control** | Disciplined feature-branch workflow merged into `main` with professional, descriptive commit messages. |
 
 ---
@@ -39,19 +36,19 @@ Unlike generic templates, Cognitio is an original static web application featuri
 
 ```
 Cognitio/
-├── index.html               # Home portal (Apple Hero, Feature Overview, Quick Actions)
-├── about.html               # Cognitive Science & Interactive Technique Switcher
+├── index.html               # Home portal (Hero section, core features overview, quick actions)
+├── about.html               # Cognitive Science & Interactive Technique Tab Switcher
 ├── planner.html             # Dynamic Course Manager (starts empty) & Task Sprint Checklist
-├── timer.html               # Apple Watch-style Pomodoro Focus Hub & Web Audio chime
-├── contact.html             # Helpdesk, Real-time Regex Validation & Cupertino Accordion FAQ
+├── timer.html               # Pomodoro Focus Hub (25m / 5m / 15m digital countdown)
+├── contact.html             # Helpdesk with Client-Side Form Validation & Accordion FAQ
 ├── css/
-│   ├── style.css            # Master stylesheet with CSS Custom Properties and Cupertino styling
-│   └── responsive.css       # Mobile & tablet adaptive breakpoint definitions
+│   ├── style.css            # Master stylesheet (~370 lines of clean, well-commented CSS)
+│   └── responsive.css       # Mobile & tablet adaptive breakpoint definitions (~60 lines)
 ├── js/
-│   ├── main.js              # Global navigation, mobile drawer toggle, and toast alerts
-│   ├── planner.js           # Dynamic Course & Task DOM manipulation, modal controller, state persistence
-│   ├── timer.js             # Circular SVG Pomodoro engine, Web Audio synthesis, session logger
-│   └── validation.js        # Real-time contact form regex validation and interactive accordion FAQ
+│   ├── main.js              # Global navigation, mobile drawer toggle, and tab switcher (~70 lines)
+│   ├── planner.js           # Dynamic Course & Task DOM manipulation (~110 lines)
+│   ├── timer.js             # Pomodoro countdown engine with Start/Pause/Reset (~75 lines)
+│   └── validation.js        # Contact form validation and interactive accordion FAQ (~85 lines)
 ├── .gitignore               # Clean repository tracking exclusions
 ├── README.md                # Project documentation & assignment overview
 └── VIVA_GUIDE.md            # Comprehensive Viva Voce preparation & code defense guide
@@ -62,28 +59,26 @@ Cognitio/
 ## 4. Website Pages & Key Features
 
 ### 1. Home (`index.html`)
-- **Cupertino Hero Section:** High-contrast headline typography with subtle gradient clip, quick-action pill buttons, and academic statistics counters.
-- **Direct Focus Call to Action:** Streamlined pathway directly leading students into their active study workflows without clutter.
+- **Apple-Style Hero:** Clean headline typography, subtitle, and primary call-to-action buttons.
+- **Feature Overview Grid:** 3 clear cards highlighting the Course Planner, Focus Timer, and Learning Methodology.
 
 ### 2. About Methodology (`about.html`)
-- **Science of Learning:** Comprehensive exploration of active recall, the Ebbinghaus forgetting curve, spaced repetition, and deep work.
-- **Interactive Study Technique Switcher:** Tabbed interface allowing users to dynamically switch between the Feynman Technique, Spaced Repetition, the Blurting Method, and Interleaving Practice.
+- **Science of Learning:** Explanations of Active Recall, the Ebbinghaus forgetting curve, spaced repetition, and deep work.
+- **Interactive Technique Switcher:** Tabbed interface letting students click between the Feynman Technique, Active Recall, and Spaced Repetition.
 
 ### 3. Academic Planner (`planner.html`)
-- **Custom Course Enroller (Starts 100% Empty):** No dummy data. Displays a clean empty state until the student enrolls courses via an accessible modal dialog.
-- **Course Management:** Students can add courses with customized color themes (Apple Blue, Green, Purple, Orange, Red, Teal), credit hours, instructors, and weekly schedules, or delete courses dynamically.
-- **Dynamic Study Sprint Checklist:** Add tasks linked directly to active enrolled courses with priorities and estimated focus minutes. Supports task completion toggling with strikethrough animations and task deletion.
+- **Custom Course Enroller (Starts 100% Empty):** No dummy placeholder data. Displays an empty state message until the student adds a course.
+- **Course Management:** Students enter Course Code, Course Name, and Instructor. Courses appear instantly with a "Delete" button that removes them from the DOM.
+- **Dynamic Study Sprint Checklist:** Add tasks linked to active courses. Checking a task applies a strikethrough completion effect, and tasks can be deleted dynamically.
 
 ### 4. Focus Hub (`timer.html`)
-- **Apple Watch-Inspired Dial:** Circular SVG progress ring dynamically calculated via `stroke-dashoffset` (`2 * π * r`).
-- **Pomodoro Engine:** Accurate `setInterval` countdown loop with mode switching between Pomodoro (25m), Short Break (5m), and Long Break (15m), plus quick sprint presets (15m, 25m, 45m, 60m).
-- **Synthesized Audio Chimes:** Uses the browser's native **Web Audio API** (`AudioContext`, `OscillatorNode`, and `GainNode`) to synthesize two-tone harmonic notification chimes (C5 523Hz & E5 659Hz) without downloading audio assets.
-- **Streak & Session Tracker:** Visual 4-cycle completion dots and persistent session activity feed.
+- **Digital Countdown Display:** Clean MM:SS format clock (`25:00`).
+- **Pomodoro Engine:** `setInterval` countdown loop with mode switching between Pomodoro (25m), Short Break (5m), and Long Break (15m).
+- **Controls:** Intuitive Start, Pause, and Reset buttons.
 
 ### 5. Contact & Support (`contact.html`)
-- **Real-Time Client-Side Form Validation:** Instant feedback on `input` and `blur` events using strict regex for email formatting, name length checks, and message length requirements.
-- **Interactive Cupertino Accordion FAQ:** Collapsible Q&A cards with animated chevron rotations, dynamic height transitions, and `aria-expanded` attributes.
-- **Academic Office Hours:** Faculty information and laboratory timings card.
+- **Client-Side Form Validation:** Checks for required name and message fields, plus regex email pattern validation (`/^[^\s@]+@[^\s@]+\.[^\s@]+$/`). Shows inline error messages and an alert on valid submission.
+- **Interactive FAQ Accordion:** Collapsible Q&A items that expand and collapse on click.
 
 ---
 
@@ -102,16 +97,3 @@ Because Cognitio is built strictly with static web technologies, no build steps 
    python -m http.server 8000
    ```
    Then navigate to `http://localhost:8000`.
-
----
-
-## 6. Git Branching & Version Control Workflow
-
-The project followed a disciplined Git workflow where every major subsystem was implemented on a dedicated feature branch, tested, committed with descriptive messages, pushed to GitHub, and merged into `main` using `--no-ff` merge commits:
-
-1. `feature/design-system-and-navigation`: Core CSS custom properties, Apple design system, responsive breakpoints, header, footer, and mobile drawer menu.
-2. `feature/home-and-about-pages`: Apple keynote hero, Bento grid layout, interactive carousel slider, and about page with technique switcher.
-3. `feature/course-and-task-planner`: Clean empty course canvas, Add Course modal, Delete Course functionality, dynamic task sprint checklist, and weekly timetable table.
-4. `feature/focus-pomodoro-timer`: Circular SVG countdown timer, Pomodoro/break modes, Web Audio API chime synthesis, and streak tracker.
-5. `feature/contact-form-validation-and-faq`: Client-side regex form validation with visual cues, confirmation alert, and interactive accordion FAQ.
-6. `docs/readme-and-viva-preparation`: Comprehensive project documentation and dedicated Viva Voce defense guide.

@@ -3,415 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cognitio Course & Study Planner - Manage courses, prioritize tasks, and track study sprints with Cupertino elegance.">
-  <meta name="author" content="Mian Ahmed - BS CS F24">
-  <title>Academic Planner — Cognitio</title>
+  <title>Academic Planner - Cognitio</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
-  <!-- ========================================================================
-       Global Apple Frosted Glass Header
-       ======================================================================== -->
+  <!-- Site Header & Navigation Bar -->
   <header class="site-header">
-    <div class="container nav-container">
-      <a href="index.html" class="brand" aria-label="Cognitio Home">
-        <span class="brand-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-        </span>
-        <span>Cognitio</span>
-      </a>
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">Cognitio<span>.</span></a>
 
-      <nav class="nav-menu" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="planner.html" class="nav-link active">Planner</a>
-        <a href="timer.html" class="nav-link">Focus Timer</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="planner.html" class="nav-link active">Planner</a></li>
+        <li><a href="timer.html" class="nav-link">Focus Hub</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
 
-      <div class="nav-actions">
-        <button id="openCourseModalBtn" class="btn btn-primary nav-cta-desktop">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <line x1="12" y1="5" x2="12" y2="19"/>
-            <line x1="5" y1="12" x2="19" y2="12"/>
-          </svg>
-          Add Course
-        </button>
-        <button id="hamburgerBtn" class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-          <div class="hamburger-bars">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
-      </div>
-    </div>
+      <!-- Mobile Hamburger Button -->
+      <button id="hamburgerBtn" class="hamburger" aria-label="Toggle Menu">&#9776;</button>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <ul id="mobileNav" class="mobile-nav">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="planner.html" class="mobile-nav-link active">Planner</a></li>
+      <li><a href="timer.html" class="mobile-nav-link">Focus Hub</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <aside id="mobileNav" class="mobile-nav" aria-label="Mobile Navigation">
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
-      <a href="planner.html" class="mobile-nav-link active">Planner</a>
-      <a href="timer.html" class="mobile-nav-link">Focus Timer</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <!-- Main Content -->
+  <main class="container">
+    <div style="margin-bottom: 32px;">
+      <h1>Academic Course & Task Planner</h1>
+      <p style="color: var(--text-muted);">Manage your enrolled semester courses and assign daily focused tasks to them.</p>
     </div>
-    <div class="mobile-nav-footer">
-      <button id="openCourseModalMobileBtn" class="btn btn-primary" style="width: 100%;">+ Add Course</button>
+
+    <!-- Section 1: Course Management -->
+    <div class="grid-2">
+      <!-- Add Course Form -->
+      <div class="card">
+        <h2 class="card-title">Enroll New Course</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">
+          Add a subject from your university curriculum. It will immediately appear on your course board.
+        </p>
+
+        <form id="courseForm">
+          <div class="form-group">
+            <label for="courseCode" class="form-label">Course Code</label>
+            <input type="text" id="courseCode" class="form-input" placeholder="e.g. CS-201 or WT-101" required>
+          </div>
+
+          <div class="form-group">
+            <label for="courseName" class="form-label">Course Name</label>
+            <input type="text" id="courseName" class="form-input" placeholder="e.g. Web Technologies" required>
+          </div>
+
+          <div class="form-group">
+            <label for="courseInstructor" class="form-label">Instructor Name</label>
+            <input type="text" id="courseInstructor" class="form-input" placeholder="e.g. Dr. Noman Shafi">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Add Course to Planner</button>
+        </form>
+      </div>
+
+      <!-- Course Cards Container (Starts 100% Empty) -->
+      <div class="card">
+        <h2 class="card-title">Enrolled Courses</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">
+          Your active semester subjects for this term:
+        </p>
+
+        <!-- Empty state placeholder -->
+        <div id="emptyCoursesMsg" class="empty-message">
+          <p><strong>No courses enrolled yet.</strong></p>
+          <p style="font-size: 0.85rem; margin-top: 6px;">Use the form on the left to add your first course.</p>
+        </div>
+
+        <!-- Dynamic Course Cards will be inserted here -->
+        <div id="courseList"></div>
+      </div>
     </div>
-  </aside>
 
-  <!-- ========================================================================
-       Main Content
-       ======================================================================== -->
-  <main id="mainContent" class="section-padding-sm">
-    <div class="container">
+    <!-- Section 2: Study Sprint Tasks -->
+    <div class="card" style="margin-top: 36px;">
+      <h2 class="card-title">Study Sprint Checklist</h2>
+      <p style="color: var(--text-muted); margin-bottom: 24px;">Break down your assignments and exam preparation into actionable checklist items.</p>
 
-      <!-- Planner Page Header -->
-      <section class="planner-header-bar">
-        <div>
-          <span class="eyebrow">Interactive Semester Suite</span>
-          <h1 class="headline-section">Academic Planner</h1>
-          <p class="subheadline" style="font-size: 1rem; margin-top: 6px;">
-            Customize your active courses and organize your daily study sprints with zero distraction.
-          </p>
-        </div>
-        <div style="display: flex; gap: 12px;">
-          <button id="triggerAddCourseBtn" class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="12" y1="5" x2="12" y2="19"/>
-              <line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            Add Course
-          </button>
-          <a href="#tasksSection" class="btn btn-secondary">Jump to Tasks</a>
-        </div>
-      </section>
+      <!-- Add Task Form -->
+      <form id="taskForm" style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px;">
+        <input type="text" id="taskTitle" class="form-input" placeholder="Enter task (e.g. Complete Lab 03 exercises)" style="flex: 2; min-width: 240px;" required>
 
-      <!-- Live Statistics Bar (Dynamically updated via JS) -->
-      <section class="planner-stats-row" aria-label="Planner Statistics">
-        <div class="planner-stat-card">
-          <div class="planner-stat-icon" style="color: var(--apple-blue);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-            </svg>
-          </div>
-          <div>
-            <div id="statCoursesCount" class="planner-stat-value">0</div>
-            <div class="planner-stat-label">Enrolled Courses</div>
-          </div>
-        </div>
+        <select id="taskCourseSelect" class="form-select" style="flex: 1; min-width: 160px;">
+          <option value="General">General Study</option>
+          <!-- Dynamic course options will be added here as courses are enrolled -->
+        </select>
 
-        <div class="planner-stat-card">
-          <div class="planner-stat-icon" style="color: var(--apple-orange);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-          </div>
-          <div>
-            <div id="statActiveTasksCount" class="planner-stat-value">0</div>
-            <div class="planner-stat-label">Pending Tasks</div>
-          </div>
-        </div>
+        <button type="submit" class="btn btn-primary" style="flex-shrink: 0;">Add Task</button>
+      </form>
 
-        <div class="planner-stat-card">
-          <div class="planner-stat-icon" style="color: var(--apple-green);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-          </div>
-          <div>
-            <div id="statCompletedTasksCount" class="planner-stat-value">0</div>
-            <div class="planner-stat-label">Completed Tasks</div>
-          </div>
-        </div>
-
-        <div class="planner-stat-card">
-          <div class="planner-stat-icon" style="color: var(--apple-purple);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12 6 12 12 16 14"/>
-            </svg>
-          </div>
-          <div>
-            <div id="statTotalMinutes" class="planner-stat-value">0m</div>
-            <div class="planner-stat-label">Estimated Focus</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 1. Enrolled Courses Section (Starts 100% Empty as requested!) -->
-      <section aria-labelledby="coursesHeading" style="margin-bottom: 56px;">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-          <div>
-            <h2 id="coursesHeading" style="font-size: 1.4rem; font-weight: 700; color: var(--text-primary);">
-              Enrolled Courses
-            </h2>
-            <p style="color: var(--text-secondary); font-size: 0.875rem;">
-              Your personalized course list. Click 'Add Course' to register your semester subjects.
-            </p>
-          </div>
-        </div>
-
-        <!-- Empty State Container (Displayed initially when 0 courses exist) -->
-        <div id="emptyCoursesState" class="empty-state-box">
-          <div class="empty-state-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-            </svg>
-          </div>
-          <h3 class="empty-state-title">No Courses Enrolled Yet</h3>
-          <p class="empty-state-text">
-            Your semester canvas is currently clean with zero generic courses. Add your courses (e.g., Web Technologies, Data Structures) to begin planning sprints!
-          </p>
-          <button id="emptyStateAddCourseBtn" class="btn btn-primary">
-            + Add Your First Course
-          </button>
-        </div>
-
-        <!-- Dynamic Courses Grid (DOM injected) -->
-        <div id="coursesGrid" class="courses-grid" style="display: none;">
-          <!-- Course cards will be injected here dynamically by planner.js -->
-        </div>
-      </section>
-
-      <!-- 2. Study Sprint & Task Manager Section -->
-      <section id="tasksSection" aria-labelledby="tasksHeading" style="margin-bottom: 56px;">
-        <div style="margin-bottom: 24px;">
-          <h2 id="tasksHeading" style="font-size: 1.4rem; font-weight: 700; color: var(--text-primary);">
-            Study Sprint Checklist
-          </h2>
-          <p style="color: var(--text-secondary); font-size: 0.875rem;">
-            Break down course assignments, revisions, and problem sets into bite-sized actionable milestones.
-          </p>
-        </div>
-
-        <div class="tasks-layout">
-          <!-- Left: Add Task Form -->
-          <article class="task-form-card">
-            <h3 style="font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 18px;">
-              Create New Task
-            </h3>
-            
-            <form id="addTaskForm" novalidate>
-              <div class="form-group">
-                <label for="taskTitleInput" class="form-label">Task Description</label>
-                <input type="text" id="taskTitleInput" class="form-input" placeholder="e.g. Complete Web Tech Assignment 01" required>
-                <span class="input-error-msg">Please enter a task description.</span>
-              </div>
-
-              <div class="form-group">
-                <label for="taskCourseSelect" class="form-label">Associated Course</label>
-                <select id="taskCourseSelect" class="form-select" required>
-                  <option value="" disabled selected>Select a course...</option>
-                  <!-- Dynamically populated from added courses -->
-                </select>
-                <span class="input-error-msg">Please select an enrolled course.</span>
-              </div>
-
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                <div class="form-group">
-                  <label for="taskDueDateInput" class="form-label">Target Date</label>
-                  <input type="date" id="taskDueDateInput" class="form-input" required>
-                  <span class="input-error-msg">Choose a date.</span>
-                </div>
-
-                <div class="form-group">
-                  <label for="taskPrioritySelect" class="form-label">Priority</label>
-                  <select id="taskPrioritySelect" class="form-select">
-                    <option value="high">High Priority</option>
-                    <option value="medium" selected>Medium Priority</option>
-                    <option value="low">Low Priority</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="taskEstMinutesInput" class="form-label">Estimated Focus Time (Minutes)</label>
-                <input type="number" id="taskEstMinutesInput" class="form-input" min="5" max="480" step="5" value="25" required>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
-                + Add Task to Sprint
-              </button>
-            </form>
-          </article>
-
-          <!-- Right: Interactive Task List & Filter -->
-          <article class="task-list-wrapper">
-            <div class="task-filter-bar">
-              <div class="filter-pills" role="tablist">
-                <button class="filter-pill-btn active" data-filter="all">All</button>
-                <button class="filter-pill-btn" data-filter="active">Incomplete</button>
-                <button class="filter-pill-btn" data-filter="completed">Completed</button>
-              </div>
-
-              <div>
-                <select id="filterByCourseSelect" class="form-select" style="padding: 6px 12px; font-size: 0.8125rem; width: auto;">
-                  <option value="all">All Courses</option>
-                  <!-- Dynamically updated -->
-                </select>
-              </div>
-            </div>
-
-            <!-- Empty Tasks Fallback -->
-            <div id="emptyTasksState" class="text-center" style="padding: 48px 16px;">
-              <p style="color: var(--text-secondary); font-size: 0.9375rem; margin-bottom: 6px;">
-                No study tasks logged yet.
-              </p>
-              <span style="font-size: 0.8125rem; color: var(--text-muted);">
-                Fill out the form on the left to schedule your first revision session!
-              </span>
-            </div>
-
-            <!-- Dynamic Task List Container -->
-            <ul id="taskList" class="task-items-list">
-              <!-- Dynamically populated via DOM manipulation in planner.js -->
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <!-- End of Planner & Task Sections -->
+      <!-- Task Items List -->
+      <ul id="taskList" class="task-list"></ul>
     </div>
   </main>
 
-  <!-- ========================================================================
-       Cupertino Modal: Add New Course (Dynamic DOM Creator)
-       ======================================================================== -->
-  <div id="addCourseModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalCourseTitle">
-    <div class="modal-window">
-      <div class="modal-header">
-        <h3 id="modalCourseTitle" class="modal-title">Enroll New Course</h3>
-        <button id="closeCourseModalBtn" class="modal-close-btn" aria-label="Close dialog">&times;</button>
-      </div>
-
-      <form id="addCourseForm" novalidate>
-        <div class="form-group">
-          <label for="courseCodeInput" class="form-label">Course Code</label>
-          <input type="text" id="courseCodeInput" class="form-input" placeholder="e.g. CS-201 or WT-101" required>
-          <span class="input-error-msg">Please enter a valid course code (e.g. CS-201).</span>
-        </div>
-
-        <div class="form-group">
-          <label for="courseTitleInput" class="form-label">Course Name</label>
-          <input type="text" id="courseTitleInput" class="form-input" placeholder="e.g. Web Technologies" required>
-          <span class="input-error-msg">Course name is required.</span>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 12px;">
-          <div class="form-group">
-            <label for="courseInstructorInput" class="form-label">Instructor</label>
-            <input type="text" id="courseInstructorInput" class="form-input" placeholder="e.g. Dr. Noman Shafi" required>
-            <span class="input-error-msg">Instructor name is required.</span>
-          </div>
-
-          <div class="form-group">
-            <label for="courseCreditHoursInput" class="form-label">Credit Hours</label>
-            <input type="number" id="courseCreditHoursInput" class="form-input" min="1" max="6" value="3" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="courseScheduleInput" class="form-label">Weekly Schedule</label>
-          <input type="text" id="courseScheduleInput" class="form-input" placeholder="e.g. Mon / Wed 08:30 AM" required>
-          <span class="input-error-msg">Schedule info is required.</span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Course Accent Color</label>
-          <div class="color-picker-options">
-            <button type="button" class="color-option selected" data-color="blue" style="background: #2997ff;" aria-label="Blue theme"></button>
-            <button type="button" class="color-option" data-color="green" style="background: #30d158;" aria-label="Green theme"></button>
-            <button type="button" class="color-option" data-color="purple" style="background: #bf5af2;" aria-label="Purple theme"></button>
-            <button type="button" class="color-option" data-color="orange" style="background: #ff9f0a;" aria-label="Orange theme"></button>
-            <button type="button" class="color-option" data-color="red" style="background: #ff453a;" aria-label="Red theme"></button>
-            <button type="button" class="color-option" data-color="teal" style="background: #64d2ff;" aria-label="Teal theme"></button>
-          </div>
-        </div>
-
-        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 28px;">
-          <button type="button" id="cancelCourseBtn" class="btn btn-secondary">Cancel</button>
-          <button type="submit" class="btn btn-primary">+ Enroll Course</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- ========================================================================
-       Global Apple-Style Minimalist Footer
-       ======================================================================== -->
+  <!-- Site Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="brand">
-            <span class="brand-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </span>
-            <span>Cognitio</span>
-          </a>
-          <p>
-            An intelligent, minimalist study planner and deep work suite built for computer science students with Cupertino precision.
-          </p>
-          <div style="margin-top: 16px;">
-            <span class="footer-academic-badge">
-              Web Technologies — BS CS F24
-            </span>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html" class="footer-link">Home</a></li>
-            <li><a href="about.html" class="footer-link">About Methodology</a></li>
-            <li><a href="planner.html" class="footer-link">Course Planner</a></li>
-            <li><a href="timer.html" class="footer-link">Focus Timer</a></li>
-            <li><a href="contact.html" class="footer-link">Support & FAQ</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Academic Modules</h4>
-          <ul class="footer-links">
-            <li><a href="planner.html" class="footer-link">Course Enroller</a></li>
-            <li><a href="planner.html" class="footer-link">Sprint Checklist</a></li>
-            <li><a href="timer.html" class="footer-link">Pomodoro Engine</a></li>
-            <li><a href="about.html" class="footer-link">Cognitive Science</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Assignment Specs</h4>
-          <ul class="footer-links">
-            <li><span class="footer-link">Course: Web Tech</span></li>
-            <li><span class="footer-link">Instructor: Dr. Noman Shafi</span></li>
-            <li><span class="footer-link">Batch: BS CS F24</span></li>
-            <li><span class="footer-link">Pure HTML5, CSS3, JS</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Cognitio. Built by Mian Ahmed. Pure Static Implementation.</p>
-        <p>Faculty of Information & Technology</p>
-      </div>
-    </div>
+    <p>&copy; 2026 Cognitio. Built for Web Technologies (BS CS F24)</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/planner.js"></script>
 </body>
