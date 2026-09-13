@@ -3,211 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cognitio - The Apple-inspired intelligent study planner and focus suite for computer science students. Built with pure HTML5, CSS3, and JavaScript.">
-  <meta name="author" content="Mian Ahmed - BS CS F24">
-  <title>Cognitio — Smart Academic & Study Planner</title>
+  <title>Cognitio - Student Academic Planner & Focus Hub</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
-  <!-- ========================================================================
-       Global Apple Frosted Glass Header
-       ======================================================================== -->
+  <!-- Site Header & Navigation Bar -->
   <header class="site-header">
-    <div class="container nav-container">
-      <!-- Brand Logo -->
-      <a href="index.html" class="brand" aria-label="Cognitio Home">
-        <span class="brand-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-        </span>
-        <span>Cognitio</span>
-      </a>
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">Cognitio<span>.</span></a>
 
-      <!-- Desktop Navigation Menu -->
-      <nav class="nav-menu" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="planner.html" class="nav-link">Planner</a>
-        <a href="timer.html" class="nav-link">Focus Timer</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="planner.html" class="nav-link">Planner</a></li>
+        <li><a href="timer.html" class="nav-link">Focus Hub</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
 
-      <!-- Desktop Action CTA & Mobile Hamburger -->
-      <div class="nav-actions">
-        <a href="planner.html" class="btn btn-primary nav-cta-desktop">Launch Planner</a>
-        <button id="hamburgerBtn" class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-          <div class="hamburger-bars">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
-      </div>
-    </div>
+      <!-- Mobile Hamburger Button -->
+      <button id="hamburgerBtn" class="hamburger" aria-label="Toggle Menu">&#9776;</button>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <ul id="mobileNav" class="mobile-nav">
+      <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="planner.html" class="mobile-nav-link">Planner</a></li>
+      <li><a href="timer.html" class="mobile-nav-link">Focus Hub</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
   </header>
 
-  <!-- Mobile Drawer Menu -->
-  <aside id="mobileNav" class="mobile-nav" aria-label="Mobile Navigation">
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link active">Home</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
-      <a href="planner.html" class="mobile-nav-link">Planner</a>
-      <a href="timer.html" class="mobile-nav-link">Focus Timer</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
-    </div>
-    <div class="mobile-nav-footer">
-      <a href="planner.html" class="btn btn-primary" style="width: 100%;">Open Planner</a>
-    </div>
-  </aside>
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero container">
+      <h1>Study smarter with Cognitio.</h1>
+      <p>A clean, evidence-based academic planner and focus timer designed to help university students organize their semester and retain knowledge.</p>
+      <div class="hero-actions">
+        <a href="planner.html" class="btn btn-primary">Open Planner</a>
+        <a href="timer.html" class="btn btn-secondary">Start Focus Hub</a>
+      </div>
+    </section>
 
-  <!-- ========================================================================
-       Main Content
-       ======================================================================== -->
-  <main id="mainContent">
+    <!-- Core Features Section -->
+    <section class="container">
+      <div class="text-center" style="margin-bottom: 32px;">
+        <h2>Engineered for Deep Learning</h2>
+        <p style="color: var(--text-muted); margin-top: 8px;">Everything you need to succeed in your academic semester.</p>
+      </div>
 
-    <!-- 1. Hero Section -->
-    <section class="hero-section">
-      <div class="hero-glow"></div>
-      <div class="container hero-content">
-        <span class="eyebrow">The Academic Operating System</span>
-        <h1 class="headline-hero">Master your studies.<br>Effortlessly refined.</h1>
-        <p class="subheadline" style="max-width: 640px; margin: 20px auto 0;">
-          Cognitio brings Cupertino elegance to academic organization. Custom-built for computer science students to manage courses, execute deep work sprints, and conquer semesters.
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="hero-cta-group">
-          <a href="planner.html" class="btn btn-primary btn-lg">Start Your Planner</a>
-          <a href="timer.html" class="btn btn-secondary btn-lg">Open Focus Timer</a>
-        </div>
-
-        <!-- Cupertino Feature Pills -->
-        <div class="feature-tags">
-          <div class="pill-tag">
-            <span class="pill-tag-dot" style="background: var(--apple-blue);"></span>
-            Zero Generic Clutter
-          </div>
-          <div class="pill-tag">
-            <span class="pill-tag-dot" style="background: var(--apple-green);"></span>
-            100% Dynamic Custom Courses
-          </div>
-          <div class="pill-tag">
-            <span class="pill-tag-dot" style="background: var(--apple-purple);"></span>
-            Audio-Synthesized Focus Intervals
-          </div>
-          <div class="pill-tag">
-            <span class="pill-tag-dot" style="background: var(--apple-orange);"></span>
-            Pure Vanilla JavaScript
+      <div class="grid-3">
+        <!-- Feature 1 -->
+        <div class="card text-center">
+          <h3 class="card-title">Course Manager</h3>
+          <p class="card-text">Add your semester subjects, track instructors, and organize tasks tailored to your university curriculum.</p>
+          <div style="margin-top: 20px;">
+            <a href="planner.html" class="btn btn-secondary btn-sm">Explore &rarr;</a>
           </div>
         </div>
 
-        <!-- Academic Stats Strip -->
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-number">25<span style="color: var(--apple-blue); font-size: 1.5rem;">m</span></div>
-            <div class="stat-label">Deep Work Intervals</div>
+        <!-- Feature 2 -->
+        <div class="card text-center">
+          <h3 class="card-title">Focus Pomodoro</h3>
+          <p class="card-text">Stay productive with structured 25-minute sprints and recovery breaks designed to prevent study burnout.</p>
+          <div style="margin-top: 20px;">
+            <a href="timer.html" class="btn btn-secondary btn-sm">Start Focus &rarr;</a>
           </div>
-          <div class="stat-item">
-            <div class="stat-number">100<span style="color: var(--apple-green); font-size: 1.5rem;">%</span></div>
-            <div class="stat-label">Client-Side Privacy</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">4x</div>
-            <div class="stat-label">Retention via Active Recall</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">0<span style="color: var(--apple-purple); font-size: 1.5rem;">ms</span></div>
-            <div class="stat-label">Zero Server Latency</div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="card text-center">
+          <h3 class="card-title">Cognitive Science</h3>
+          <p class="card-text">Ground your study sessions in evidence-based techniques like active recall, spaced repetition, and the Feynman technique.</p>
+          <div style="margin-top: 20px;">
+            <a href="about.html" class="btn btn-secondary btn-sm">Learn Science &rarr;</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. Final Apple-Style Call to Action -->
-    <section class="section-padding-sm" style="text-align: center; border-top: 1px solid var(--border-subtle);">
-      <div class="container container-narrow">
-        <h2 class="headline-section" style="margin-bottom: 16px;">Step into deep focus today.</h2>
-        <p class="subheadline" style="margin-bottom: 32px;">
-          Set up your courses in under a minute, schedule your sprint tasks, and stay on top of your semester.
-        </p>
-        <a href="planner.html" class="btn btn-primary btn-lg">Launch Cognitio Planner</a>
+    <!-- Call to Action Banner -->
+    <section class="container text-center" style="margin-top: 20px;">
+      <div class="card" style="padding: 40px 20px;">
+        <h2>Ready to excel in your semester?</h2>
+        <p style="color: var(--text-muted); margin: 12px 0 24px;">Start by adding your courses and scheduling your daily study sprints.</p>
+        <a href="planner.html" class="btn btn-primary">Launch Planner</a>
       </div>
     </section>
-
   </main>
 
-  <!-- ========================================================================
-       Global Apple-Style Minimalist Footer
-       ======================================================================== -->
+  <!-- Site Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Col 1: Brand & Assignment Info -->
-        <div class="footer-brand">
-          <a href="index.html" class="brand">
-            <span class="brand-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </span>
-            <span>Cognitio</span>
-          </a>
-          <p>
-            An intelligent, minimalist study planner and deep work suite built for computer science students with Cupertino precision.
-          </p>
-          <div style="margin-top: 16px;">
-            <span class="footer-academic-badge">
-              Web Technologies — BS CS F24
-            </span>
-          </div>
-        </div>
-
-        <!-- Col 2: Navigation -->
-        <div>
-          <h4 class="footer-title">Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html" class="footer-link">Home</a></li>
-            <li><a href="about.html" class="footer-link">About Methodology</a></li>
-            <li><a href="planner.html" class="footer-link">Course Planner</a></li>
-            <li><a href="timer.html" class="footer-link">Focus Timer</a></li>
-            <li><a href="contact.html" class="footer-link">Support & FAQ</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Academic Highlights -->
-        <div>
-          <h4 class="footer-title">Academic Modules</h4>
-          <ul class="footer-links">
-            <li><a href="planner.html" class="footer-link">Course Enroller</a></li>
-            <li><a href="planner.html" class="footer-link">Sprint Checklist</a></li>
-            <li><a href="timer.html" class="footer-link">Pomodoro Engine</a></li>
-            <li><a href="about.html" class="footer-link">Cognitive Science</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Course Info -->
-        <div>
-          <h4 class="footer-title">Assignment Specs</h4>
-          <ul class="footer-links">
-            <li><span class="footer-link">Course: Web Tech</span></li>
-            <li><span class="footer-link">Instructor: Dr. Noman Shafi</span></li>
-            <li><span class="footer-link">Batch: BS CS F24</span></li>
-            <li><span class="footer-link">Pure HTML5, CSS3, JS</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Cognitio. Built by Mian Ahmed. Pure Static Implementation.</p>
-        <p>Faculty of Information & Technology</p>
-      </div>
-    </div>
+    <p>&copy; 2026 Cognitio. Built for Web Technologies (BS CS F24)</p>
   </footer>
 
-  <!-- Main JavaScript File -->
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -3,356 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cognitio Methodology - The cognitive neuroscience and evidence-based study techniques behind academic mastery.">
-  <meta name="author" content="Mian Ahmed - BS CS F24">
-  <title>About Cognitio — The Science of Mastery</title>
+  <title>About - Science of Learning - Cognitio</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
-  <!-- ========================================================================
-       Global Apple Frosted Glass Header
-       ======================================================================== -->
+  <!-- Site Header & Navigation Bar -->
   <header class="site-header">
-    <div class="container nav-container">
-      <a href="index.html" class="brand" aria-label="Cognitio Home">
-        <span class="brand-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-        </span>
-        <span>Cognitio</span>
-      </a>
+    <nav class="navbar">
+      <a href="index.html" class="nav-brand">Cognitio<span>.</span></a>
 
-      <nav class="nav-menu" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="planner.html" class="nav-link">Planner</a>
-        <a href="timer.html" class="nav-link">Focus Timer</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link active">About</a></li>
+        <li><a href="planner.html" class="nav-link">Planner</a></li>
+        <li><a href="timer.html" class="nav-link">Focus Hub</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
 
-      <div class="nav-actions">
-        <a href="planner.html" class="btn btn-primary nav-cta-desktop">Launch Planner</a>
-        <button id="hamburgerBtn" class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-          <div class="hamburger-bars">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
-      </div>
-    </div>
+      <!-- Mobile Hamburger Button -->
+      <button id="hamburgerBtn" class="hamburger" aria-label="Toggle Menu">&#9776;</button>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <ul id="mobileNav" class="mobile-nav">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link active">About</a></li>
+      <li><a href="planner.html" class="mobile-nav-link">Planner</a></li>
+      <li><a href="timer.html" class="mobile-nav-link">Focus Hub</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <aside id="mobileNav" class="mobile-nav" aria-label="Mobile Navigation">
-    <div class="mobile-nav-links">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="about.html" class="mobile-nav-link active">About</a>
-      <a href="planner.html" class="mobile-nav-link">Planner</a>
-      <a href="timer.html" class="mobile-nav-link">Focus Timer</a>
-      <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <!-- Main Content -->
+  <main class="container">
+    <div class="text-center" style="margin-bottom: 40px;">
+      <h1>Evidence-Based Study Techniques</h1>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 10px auto 0;">
+        Cognitio is grounded in established cognitive psychology. Click through the proven study methodologies below:
+      </p>
+
+      <!-- Interactive Tab Buttons -->
+      <div class="tab-buttons">
+        <button type="button" class="tab-btn active" data-tab="tab-feynman">The Feynman Technique</button>
+        <button type="button" class="tab-btn" data-tab="tab-recall">Active Recall</button>
+        <button type="button" class="tab-btn" data-tab="tab-spaced">Spaced Repetition</button>
+      </div>
     </div>
-    <div class="mobile-nav-footer">
-      <a href="planner.html" class="btn btn-primary" style="width: 100%;">Open Planner</a>
+
+    <!-- Tab 1: Feynman Technique -->
+    <div id="tab-feynman" class="tab-panel active">
+      <div class="card">
+        <h2 class="card-title">1. The Feynman Technique (Learn by Teaching)</h2>
+        <p style="margin-bottom: 16px;">Named after Nobel Prize-winning physicist Richard Feynman, this technique proves whether you truly understand a concept or merely memorized its definition.</p>
+        <div class="grid-2">
+          <div class="card" style="background: #fbfbfd;">
+            <h4>Step 1: Choose a Topic</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 6px;">Pick a difficult computer science topic (e.g. recursion or binary search trees) on a blank page.</p>
+          </div>
+          <div class="card" style="background: #fbfbfd;">
+            <h4>Step 2: Explain Simply</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 6px;">Explain the idea as if teaching an 8-year-old using simple words and no jargon.</p>
+          </div>
+          <div class="card" style="background: #fbfbfd;">
+            <h4>Step 3: Spot Your Gaps</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 6px;">Whenever you get stuck or use vague terms, return to your textbook to clarify.</p>
+          </div>
+          <div class="card" style="background: #fbfbfd;">
+            <h4>Step 4: Refine and Simplify</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 6px;">Use relatable analogies to solidify the logic until you can explain it effortlessly.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </aside>
 
-  <!-- ========================================================================
-       Main Content
-       ======================================================================== -->
-  <main id="mainContent">
-
-    <!-- 1. Hero Section -->
-    <section class="hero-section">
-      <div class="hero-glow" style="background: radial-gradient(circle, rgba(191, 90, 242, 0.2) 0%, rgba(41, 151, 255, 0.08) 40%, transparent 70%);"></div>
-      <div class="container hero-content">
-        <span class="eyebrow" style="color: var(--apple-purple);">Cognitive Neuroscience</span>
-        <h1 class="headline-hero">Built on how the brain<br>actually learns.</h1>
-        <p class="subheadline" style="max-width: 680px; margin: 20px auto 0;">
-          Passive re-reading is an illusion of competence. Cognitio is architected around active retrieval, temporal spacing, and uninterrupted deep work.
-        </p>
+    <!-- Tab 2: Active Recall -->
+    <div id="tab-recall" class="tab-panel">
+      <div class="card">
+        <h2 class="card-title">2. Active Recall (Retrieval Practice)</h2>
+        <p style="margin-bottom: 16px;">Passive reading produces an illusion of competence. Testing yourself before looking at the answers forces neural pathways to strengthen permanently.</p>
+        <div class="grid-2">
+          <div class="card" style="background: #fbfbfd;">
+            <h4>Passive Reviewing (Low Efficiency)</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 6px;">Re-reading highlighted slides multiple times feels easy but leads to rapid forgetting during exams.</p>
+          </div>
+          <div class="card" style="background: #fbfbfd;">
+            <h4>Active Retrieval (High Efficiency)</h4>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 6px;">Close your notes and write out the algorithm from memory. Struggle strengthens memory retention by over 300%.</p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <!-- 2. Interactive Study Technique Switcher -->
-    <section class="section-padding" style="background: var(--bg-secondary);">
-      <div class="container container-narrow">
-        <div class="text-center" style="margin-bottom: 40px;">
-          <span class="eyebrow">Interactive Methodology Explorer</span>
-          <h2 class="headline-section">Four pillars of accelerated retention.</h2>
-          <p class="subheadline" style="margin-top: 12px;">
-            Select a learning framework below to view its scientific basis, implementation steps, and typical student gains.
-          </p>
-        </div>
-
-        <!-- Technique Tabs -->
-        <div class="technique-tabs" role="tablist">
-          <button class="technique-tab-btn active" data-target="tabFeynman" role="tab" aria-selected="true">
-            The Feynman Technique
-          </button>
-          <button class="technique-tab-btn" data-target="tabSpaced" role="tab" aria-selected="false">
-            Spaced Repetition
-          </button>
-          <button class="technique-tab-btn" data-target="tabBlurting" role="tab" aria-selected="false">
-            Active Recall & Blurting
-          </button>
-          <button class="technique-tab-btn" data-target="tabInterleaving" role="tab" aria-selected="false">
-            Interleaving Practice
-          </button>
-        </div>
-
-        <!-- Panel 1: Feynman Technique -->
-        <div id="tabFeynman" class="technique-panel active" role="tabpanel">
-          <div class="bento-card" style="padding: 40px;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-              <span class="pill-tag" style="background: rgba(191, 90, 242, 0.15); color: var(--apple-purple);">Simplification & Mental Models</span>
-              <span style="font-size: 0.8125rem; color: var(--text-muted);">Retention Multiplier: 3.8x</span>
-            </div>
-            <h3 style="font-size: 1.6rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px;">
-              Explain It Simply or You Don't Understand It
-            </h3>
-            <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 24px;">
-              Named after Nobel laureate Richard Feynman, this technique forces you to teach a concept in the simplest possible terms without technical jargon. When you encounter a point where you cannot simplify, you have located your exact knowledge gap.
-            </p>
-            <div style="background: #f5f5f7; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 20px; margin-bottom: 24px;">
-              <h4 style="font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 8px;">Execution Protocol:</h4>
-              <ol style="color: var(--text-secondary); font-size: 0.875rem; padding-left: 20px; line-height: 1.7; list-style: decimal;">
-                <li>Choose the CS concept (e.g., QuickSort partitioning or B-Trees).</li>
-                <li>Write a brief explanation using analogies understandable to a beginner.</li>
-                <li>Pinpoint where you stumbled or used filler words.</li>
-                <li>Review reference documentation to rebuild that specific link.</li>
-              </ol>
-            </div>
-            <div style="display: flex; gap: 12px; align-items: center;">
-              <a href="planner.html" class="btn btn-primary btn-sm">Schedule a Feynman Review</a>
-            </div>
+    <!-- Tab 3: Spaced Repetition -->
+    <div id="tab-spaced" class="tab-panel">
+      <div class="card">
+        <h2 class="card-title">3. Spaced Repetition (The Forgetting Curve)</h2>
+        <p style="margin-bottom: 16px;">Hermann Ebbinghaus discovered that memories fade exponentially unless reviewed at calculated expanding intervals.</p>
+        <div class="grid-3">
+          <div class="card text-center" style="background: #fbfbfd;">
+            <h4>Day 1</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">Initial lecture study and summary creation.</p>
+          </div>
+          <div class="card text-center" style="background: #fbfbfd;">
+            <h4>Day 3</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">Quick 10-minute active recall session.</p>
+          </div>
+          <div class="card text-center" style="background: #fbfbfd;">
+            <h4>Day 7 & 21</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px;">Permanent retention review before midterms.</p>
           </div>
         </div>
-
-        <!-- Panel 2: Spaced Repetition -->
-        <div id="tabSpaced" class="technique-panel" role="tabpanel">
-          <div class="bento-card" style="padding: 40px;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-              <span class="pill-tag" style="background: rgba(41, 151, 255, 0.15); color: var(--apple-blue);">Memory Decay Neutralization</span>
-              <span style="font-size: 0.8125rem; color: var(--text-muted);">Retention Multiplier: 4.5x</span>
-            </div>
-            <h3 style="font-size: 1.6rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px;">
-              Hacking the Ebbinghaus Forgetting Curve
-            </h3>
-            <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 24px;">
-              German psychologist Hermann Ebbinghaus discovered that memories deteriorate exponentially within 48 hours of initial exposure. By reviewing material at calculated intervals—just before you are about to forget it—the neural synaptic connections are hardened permanently.
-            </p>
-            <div style="background: #f5f5f7; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 20px; margin-bottom: 24px;">
-              <h4 style="font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 8px;">Optimal Interval Schedule:</h4>
-              <ul style="color: var(--text-secondary); font-size: 0.875rem; line-height: 1.7;">
-                <li><strong>Session 0:</strong> Initial deep lecture and understanding.</li>
-                <li><strong>Review 1 (24 Hours Later):</strong> 10-minute active recall drill.</li>
-                <li><strong>Review 2 (3 Days Later):</strong> Problem set and edge case evaluation.</li>
-                <li><strong>Review 3 (10 Days Later):</strong> Quick conceptual summary.</li>
-              </ul>
-            </div>
-            <div style="display: flex; gap: 12px; align-items: center;">
-              <a href="planner.html" class="btn btn-primary btn-sm">Add Spaced Task</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Panel 3: Active Recall & Blurting -->
-        <div id="tabBlurting" class="technique-panel" role="tabpanel">
-          <div class="bento-card" style="padding: 40px;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-              <span class="pill-tag" style="background: rgba(48, 209, 88, 0.15); color: var(--apple-green);">Effortful Retrieval</span>
-              <span style="font-size: 0.8125rem; color: var(--text-muted);">Retention Multiplier: 5.0x</span>
-            </div>
-            <h3 style="font-size: 1.6rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px;">
-              The Blurting Method
-            </h3>
-            <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 24px;">
-              Reading notes creates familiarity, which the brain misinterprets as mastery. The Blurting Method requires you to close all books and tabs, take a blank sheet or editor, and write down every single formula, theorem, and code snippet from memory.
-            </p>
-            <div style="background: #f5f5f7; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 20px; margin-bottom: 24px;">
-              <h4 style="font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 8px;">Color Coding Feedback:</h4>
-              <p style="color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
-                Use green ink for concepts remembered accurately, and red ink for items you missed. Focus your next 25-minute Pomodoro exclusively on the red items.
-              </p>
-            </div>
-            <div style="display: flex; gap: 12px; align-items: center;">
-              <a href="timer.html" class="btn btn-primary btn-sm">Open 25m Blurting Timer</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Panel 4: Interleaving Practice -->
-        <div id="tabInterleaving" class="technique-panel" role="tabpanel">
-          <div class="bento-card" style="padding: 40px;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-              <span class="pill-tag" style="background: rgba(255, 159, 10, 0.15); color: var(--apple-orange);">Cognitive Discrimination</span>
-              <span style="font-size: 0.8125rem; color: var(--text-muted);">Transfer Multiplier: 2.9x</span>
-            </div>
-            <h3 style="font-size: 1.6rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px;">
-              Interleaving vs. Blocked Practice
-            </h3>
-            <p style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 24px;">
-              Solving 20 identical array problems in a row (blocked practice) teaches pattern memorization, not problem-solving. Interleaving mixes disparate problem types (e.g., one graph traversal, one dynamic programming, one hash map problem) forcing the brain to first diagnose which tool to apply.
-            </p>
-            <div style="background: #f5f5f7; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 20px; margin-bottom: 24px;">
-              <h4 style="font-size: 0.9375rem; color: var(--text-primary); margin-bottom: 8px;">Exam Day Superiority:</h4>
-              <p style="color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6;">
-                Interleaved learners consistently score 43% higher on unexpected exam questions because they have practiced classification, not just automated execution.
-              </p>
-            </div>
-            <div style="display: flex; gap: 12px; align-items: center;">
-              <a href="planner.html" class="btn btn-primary btn-sm">Organize Interleaved Tasks</a>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </section>
+    </div>
 
-    <!-- 3. Bento Grid: Academic Philosophy -->
-    <section class="section-padding">
-      <div class="container">
-        <div class="text-center" style="max-width: 650px; margin: 0 auto 56px;">
-          <span class="eyebrow">The Cognitio Creed</span>
-          <h2 class="headline-section">Designed for high-performance students.</h2>
-          <p class="subheadline" style="margin-top: 14px;">
-            Engineered specifically to solve the real academic bottlenecks observed in undergraduate computer science cohorts.
-          </p>
+    <!-- Additional Academic Advice -->
+    <section style="margin-top: 40px;">
+      <h2 style="margin-bottom: 20px;">Study Habits of High Performers</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="card-title">Deep Work Sessions</h3>
+          <p class="card-text">Isolate your study sprints from social media and instant messages. 25 minutes of single-tasking yields greater cognitive retention than 2 hours of multitasking.</p>
         </div>
-
-        <div class="bento-grid">
-          <!-- Item 1 -->
-          <article class="bento-card bento-span-4">
-            <div class="bento-card-header">
-              <div class="card-icon-pill" style="color: var(--apple-blue);">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                </svg>
-              </div>
-            </div>
-            <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">Zero Setup Friction</h3>
-            <p style="color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6;">
-              Heavy databases and mandatory user logins create hesitation. Cognitio runs instantly in any modern browser with instant zero-lag responsiveness.
-            </p>
-          </article>
-
-          <!-- Item 2 -->
-          <article class="bento-card bento-span-4">
-            <div class="bento-card-header">
-              <div class="card-icon-pill" style="color: var(--apple-green);">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-              </div>
-            </div>
-            <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">Total Student Privacy</h3>
-            <p style="color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6;">
-              Your academic coursework, schedules, and custom assignment deadlines stay entirely on your device. Zero tracking, zero telemetry, 100% focused.
-            </p>
-          </article>
-
-          <!-- Item 3 -->
-          <article class="bento-card bento-span-4">
-            <div class="bento-card-header">
-              <div class="card-icon-pill" style="color: var(--apple-purple);">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="2" y1="12" x2="22" y2="12"/>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </div>
-            </div>
-            <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">Cupertino Precision</h3>
-            <p style="color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.6;">
-              Inspired by Apple.com's clean aesthetic, high-contrast readability, and balanced whitespace. Designed to look as calm at midnight as at midday.
-            </p>
-          </article>
+        <div class="card">
+          <h3 class="card-title">Interleaved Practice</h3>
+          <p class="card-text">Instead of studying only one topic for 6 hours straight, alternate between theoretical problem-solving and programming exercises to keep your brain engaged.</p>
         </div>
       </div>
     </section>
-
-    <!-- 4. Academic Context Banner -->
-    <section class="section-padding-sm" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle);">
-      <div class="container text-center">
-        <span class="eyebrow">Academic Submission Context</span>
-        <h2 class="headline-section" style="font-size: 1.85rem; margin-bottom: 16px;">
-          Faculty of Information and Technology
-        </h2>
-        <p class="subheadline" style="max-width: 600px; margin: 0 auto 24px;">
-          Developed for Web Technologies Assignment 01 by Mian Ahmed (BS CS F24), under the instruction of Dr. Noman Shafi.
-        </p>
-        <a href="planner.html" class="btn btn-primary">Open Academic Planner</a>
-      </div>
-    </section>
-
   </main>
 
-  <!-- ========================================================================
-       Global Apple-Style Minimalist Footer
-       ======================================================================== -->
+  <!-- Site Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="brand">
-            <span class="brand-icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </span>
-            <span>Cognitio</span>
-          </a>
-          <p>
-            An intelligent, minimalist study planner and deep work suite built for computer science students with Cupertino precision.
-          </p>
-          <div style="margin-top: 16px;">
-            <span class="footer-academic-badge">
-              Web Technologies — BS CS F24
-            </span>
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html" class="footer-link">Home</a></li>
-            <li><a href="about.html" class="footer-link">About Methodology</a></li>
-            <li><a href="planner.html" class="footer-link">Course Planner</a></li>
-            <li><a href="timer.html" class="footer-link">Focus Timer</a></li>
-            <li><a href="contact.html" class="footer-link">Support & FAQ</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Academic Modules</h4>
-          <ul class="footer-links">
-            <li><a href="planner.html" class="footer-link">Course Enroller</a></li>
-            <li><a href="planner.html" class="footer-link">Sprint Checklist</a></li>
-            <li><a href="timer.html" class="footer-link">Pomodoro Engine</a></li>
-            <li><a href="about.html" class="footer-link">Cognitive Science</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-title">Assignment Specs</h4>
-          <ul class="footer-links">
-            <li><span class="footer-link">Course: Web Tech</span></li>
-            <li><span class="footer-link">Instructor: Dr. Noman Shafi</span></li>
-            <li><span class="footer-link">Batch: BS CS F24</span></li>
-            <li><span class="footer-link">Pure HTML5, CSS3, JS</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Cognitio. Built by Mian Ahmed. Pure Static Implementation.</p>
-        <p>Faculty of Information & Technology</p>
-      </div>
-    </div>
+    <p>&copy; 2026 Cognitio. Built for Web Technologies (BS CS F24)</p>
   </footer>
 
   <script src="js/main.js"></script>
