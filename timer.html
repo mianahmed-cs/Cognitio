@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cognitio Pomodoro Engine - Distraction-free deep work sprints inspired by Apple Watch timer interface with Web Audio API chime synthesis.">
+  <meta name="author" content="Mian Ahmed - BS CS F24">
+  <title>Focus Hub & Pomodoro — Cognitio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Global Apple Frosted Glass Header
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand" aria-label="Cognitio Home">
+        <span class="brand-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>Cognitio</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="planner.html" class="nav-link">Planner</a>
+        <a href="timer.html" class="nav-link active">Focus Timer</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="planner.html" class="btn btn-primary nav-cta-desktop">Launch Planner</a>
+        <button id="hamburgerBtn" class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <div class="hamburger-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside id="mobileNav" class="mobile-nav" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="planner.html" class="mobile-nav-link">Planner</a>
+      <a href="timer.html" class="mobile-nav-link active">Focus Timer</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="planner.html" class="btn btn-primary" style="width: 100%;">Open Planner</a>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       Main Content
+       ======================================================================== -->
+  <main id="mainContent" class="section-padding-sm">
+    <div class="container">
+
+      <!-- Page Header -->
+      <section class="text-center" style="max-width: 650px; margin: 0 auto 40px;">
+        <span class="eyebrow" style="color: var(--apple-orange);">Deep Work Engine</span>
+        <h1 class="headline-section">Cupertino Focus Hub</h1>
+        <p class="subheadline" style="margin-top: 10px;">
+          Eliminate attention residue. Lock into 25-minute uninterrupted flow states backed by synthetic audio feedback.
+        </p>
+      </section>
+
+      <!-- Timer Hub Container -->
+      <div class="timer-hub-wrapper">
+        <section class="timer-card" aria-label="Pomodoro Focus Timer">
+
+          <!-- Mode Switcher (Pill Segmented Control) -->
+          <div class="timer-mode-switcher" role="tablist">
+            <button id="modePomodoroBtn" class="timer-mode-btn active" data-mode="pomodoro" role="tab" aria-selected="true">
+              Pomodoro (25m)
+            </button>
+            <button id="modeShortBreakBtn" class="timer-mode-btn" data-mode="shortBreak" role="tab" aria-selected="false">
+              Short Break (5m)
+            </button>
+            <button id="modeLongBreakBtn" class="timer-mode-btn" data-mode="longBreak" role="tab" aria-selected="false">
+              Long Break (15m)
+            </button>
+          </div>
+
+          <!-- Circular SVG Progress Ring & Digits -->
+          <div class="timer-dial-wrapper">
+            <svg class="timer-svg" viewBox="0 0 260 260">
+              <circle class="timer-track-circle" cx="130" cy="130" r="115"></circle>
+              <circle id="timerProgressCircle" class="timer-progress-circle" cx="130" cy="130" r="115"
+                      stroke-dasharray="722.56" stroke-dashoffset="0"></circle>
+            </svg>
+
+            <div class="timer-digits-container">
+              <span id="timerDisplay" class="timer-digits">25:00</span>
+              <span id="timerStatusBadge" class="timer-status-badge">Deep Focus</span>
+            </div>
+          </div>
+
+          <!-- Quick Preset Intervals -->
+          <div class="preset-intervals" aria-label="Quick Interval Presets">
+            <span style="font-size: 0.8125rem; color: var(--text-muted); margin-right: 6px;">Sprint Presets:</span>
+            <button class="preset-pill active" data-mins="25">25 Min</button>
+            <button class="preset-pill" data-mins="45">45 Min</button>
+            <button class="preset-pill" data-mins="50">50 Min</button>
+            <button class="preset-pill" data-mins="60">60 Min</button>
+          </div>
+
+          <!-- Timer Actions Bar -->
+          <div class="timer-actions">
+            <!-- Reset Button -->
+            <button id="resetTimerBtn" class="btn-timer-icon" aria-label="Reset Timer" title="Reset Session">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 2v6h6"/>
+                <path d="M21 12A9 9 0 0 0 6 5.3L3 8"/>
+                <path d="M21 22v-6h-6"/>
+                <path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"/>
+              </svg>
+            </button>
+
+            <!-- Main Play / Pause Button -->
+            <button id="toggleTimerBtn" class="btn btn-primary btn-timer-main" aria-label="Start Focus Timer">
+              <svg id="toggleIconPlay" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              <svg id="toggleIconPause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                <rect x="6" y="4" width="4" height="16"/>
+                <rect x="14" y="4" width="4" height="16"/>
+              </svg>
+              <span id="toggleBtnText">Start Focus</span>
+            </button>
+
+            <!-- Skip / Forward Button -->
+            <button id="skipTimerBtn" class="btn-timer-icon" aria-label="Skip to Next Mode" title="Skip Session">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="5 4 15 12 5 20 5 4"/>
+                <line x1="19" y1="5" x2="19" y2="19"/>
+              </svg>
+            </button>
+
+            <!-- Audio Chime Toggle -->
+            <button id="soundToggleBtn" class="btn-timer-icon" aria-label="Toggle Sound" title="Sound Synthesizer Active">
+              <svg id="soundIconOn" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+              </svg>
+              <svg id="soundIconOff" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                <line x1="1" y1="1" x2="23" y2="23"/>
+                <path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"/>
+                <path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Session Streak Cycle Dots -->
+          <div class="session-streak-container">
+            <span style="font-size: 0.8125rem; color: var(--text-muted); margin-right: 8px;">
+              Cycle Progress:
+            </span>
+            <div id="streakDot1" class="streak-dot"></div>
+            <div id="streakDot2" class="streak-dot"></div>
+            <div id="streakDot3" class="streak-dot"></div>
+            <div id="streakDot4" class="streak-dot"></div>
+            <span id="streakCountText" style="font-size: 0.8125rem; color: var(--text-secondary); margin-left: 8px;">
+              0/4 Completed
+            </span>
+          </div>
+
+        </section>
+
+        <!-- Focus Session Log -->
+        <section class="focus-log-card" aria-label="Session History">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <h3 style="font-size: 1.1rem; font-weight: 600; color: #fff;">Today's Focus Log</h3>
+            <button id="clearLogBtn" class="btn btn-ghost btn-sm">Clear History</button>
+          </div>
+          <div id="focusLogList" class="focus-log-list">
+            <div id="emptyLogState" style="color: var(--text-muted); font-size: 0.8125rem; padding: 12px 0;">
+              No completed sessions yet. Start your first sprint above!
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       Global Apple-Style Minimalist Footer
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </span>
+            <span>Cognitio</span>
+          </a>
+          <p>
+            An intelligent, minimalist study planner and deep work suite built for computer science students with Cupertino precision.
+          </p>
+          <div style="margin-top: 16px;">
+            <span class="footer-academic-badge">
+              Web Technologies — BS CS F24
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Methodology</a></li>
+            <li><a href="planner.html" class="footer-link">Course Planner</a></li>
+            <li><a href="timer.html" class="footer-link">Focus Timer</a></li>
+            <li><a href="contact.html" class="footer-link">Support & FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Academic Modules</h4>
+          <ul class="footer-links">
+            <li><a href="planner.html" class="footer-link">Course Enroller</a></li>
+            <li><a href="planner.html" class="footer-link">Sprint Checklist</a></li>
+            <li><a href="timer.html" class="footer-link">Pomodoro Engine</a></li>
+            <li><a href="about.html" class="footer-link">Cognitive Science</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Assignment Specs</h4>
+          <ul class="footer-links">
+            <li><span class="footer-link">Course: Web Tech</span></li>
+            <li><span class="footer-link">Instructor: Dr. Noman Shafi</span></li>
+            <li><span class="footer-link">Batch: BS CS F24</span></li>
+            <li><span class="footer-link">Pure HTML5, CSS3, JS</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Cognitio. Built by Mian Ahmed. Pure Static Implementation.</p>
+        <p>Faculty of Information & Technology</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/timer.js"></script>
+</body>
+</html>
