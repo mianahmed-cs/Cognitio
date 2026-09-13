@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNavigation();
   highlightActiveNavLink();
   initToastContainer();
-  initCarousel();
   initTechniqueTabs();
 });
 
@@ -114,91 +113,7 @@ window.showToast = function(message, type = 'info') {
 };
 
 /**
- * 4. Interactive Testimonial & Study Tips Carousel
- * Supports prev/next, dot indicators, and automatic interval rotation with pause on hover.
- */
-function initCarousel() {
-  const track = document.getElementById('tipsCarouselTrack');
-  const prevBtn = document.getElementById('prevSlideBtn');
-  const nextBtn = document.getElementById('nextSlideBtn');
-  const dotsContainer = document.getElementById('carouselDots');
-
-  if (!track || !prevBtn || !nextBtn) return;
-
-  const slides = track.querySelectorAll('.carousel-slide');
-  const dots = dotsContainer ? dotsContainer.querySelectorAll('.carousel-dot') : [];
-  let currentIndex = 0;
-  let autoSlideTimer = null;
-
-  function updateCarousel(index) {
-    if (index < 0) {
-      currentIndex = slides.length - 1;
-    } else if (index >= slides.length) {
-      currentIndex = 0;
-    } else {
-      currentIndex = index;
-    }
-
-    // Translate track
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-    // Update active dot
-    dots.forEach((dot, idx) => {
-      if (idx === currentIndex) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
-      }
-    });
-  }
-
-  // Next & Prev event listeners
-  nextBtn.addEventListener('click', () => {
-    updateCarousel(currentIndex + 1);
-    resetAutoSlide();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    updateCarousel(currentIndex - 1);
-    resetAutoSlide();
-  });
-
-  // Dot navigation
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const targetIndex = parseInt(dot.getAttribute('data-index'), 10);
-      updateCarousel(targetIndex);
-      resetAutoSlide();
-    });
-  });
-
-  // Automatic slide rotation
-  function startAutoSlide() {
-    autoSlideTimer = setInterval(() => {
-      updateCarousel(currentIndex + 1);
-    }, 6000);
-  }
-
-  function resetAutoSlide() {
-    if (autoSlideTimer) clearInterval(autoSlideTimer);
-    startAutoSlide();
-  }
-
-  // Pause on mouse hover for readability
-  track.parentElement.addEventListener('mouseenter', () => {
-    if (autoSlideTimer) clearInterval(autoSlideTimer);
-  });
-
-  track.parentElement.addEventListener('mouseleave', () => {
-    startAutoSlide();
-  });
-
-  // Initial startup
-  startAutoSlide();
-}
-
-/**
- * 5. Interactive Study Technique Switcher (Used on about.html)
+ * 4. Interactive Study Technique Switcher (Used on about.html)
  * Switches active tabs and displays corresponding cognitive science panel.
  */
 function initTechniqueTabs() {
