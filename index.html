@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cognitio - The Apple-inspired intelligent study planner and focus suite for computer science students. Built with pure HTML5, CSS3, and JavaScript.">
+  <meta name="author" content="Mian Ahmed - BS CS F24">
+  <title>Cognitio — Smart Academic & Study Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Global Apple Frosted Glass Header
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand" aria-label="Cognitio Home">
+        <span class="brand-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </span>
+        <span>Cognitio</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="planner.html" class="nav-link">Planner</a>
+        <a href="timer.html" class="nav-link">Focus Timer</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Desktop Action CTA & Mobile Hamburger -->
+      <div class="nav-actions">
+        <a href="planner.html" class="btn btn-primary nav-cta-desktop">Launch Planner</a>
+        <button id="hamburgerBtn" class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <div class="hamburger-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside id="mobileNav" class="mobile-nav" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link active">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="planner.html" class="mobile-nav-link">Planner</a>
+      <a href="timer.html" class="mobile-nav-link">Focus Timer</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="planner.html" class="btn btn-primary" style="width: 100%;">Open Planner</a>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       Main Content
+       ======================================================================== -->
+  <main id="mainContent">
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section">
+      <div class="hero-glow"></div>
+      <div class="container hero-content">
+        <span class="eyebrow">The Academic Operating System</span>
+        <h1 class="headline-hero">Master your studies.<br>Effortlessly refined.</h1>
+        <p class="subheadline" style="max-width: 640px; margin: 20px auto 0;">
+          Cognitio brings Cupertino elegance to academic organization. Custom-built for computer science students to manage courses, execute deep work sprints, and conquer semesters.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta-group">
+          <a href="planner.html" class="btn btn-primary btn-lg">Start Your Planner</a>
+          <a href="timer.html" class="btn btn-secondary btn-lg">Open Focus Timer</a>
+        </div>
+
+        <!-- Cupertino Feature Pills -->
+        <div class="feature-tags">
+          <div class="pill-tag">
+            <span class="pill-tag-dot" style="background: var(--apple-blue);"></span>
+            Zero Generic Clutter
+          </div>
+          <div class="pill-tag">
+            <span class="pill-tag-dot" style="background: var(--apple-green);"></span>
+            100% Dynamic Custom Courses
+          </div>
+          <div class="pill-tag">
+            <span class="pill-tag-dot" style="background: var(--apple-purple);"></span>
+            Audio-Synthesized Focus Intervals
+          </div>
+          <div class="pill-tag">
+            <span class="pill-tag-dot" style="background: var(--apple-orange);"></span>
+            Pure Vanilla JavaScript
+          </div>
+        </div>
+
+        <!-- Academic Stats Strip -->
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">25<span style="color: var(--apple-blue); font-size: 1.5rem;">m</span></div>
+            <div class="stat-label">Deep Work Intervals</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100<span style="color: var(--apple-green); font-size: 1.5rem;">%</span></div>
+            <div class="stat-label">Client-Side Privacy</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4x</div>
+            <div class="stat-label">Retention via Active Recall</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">0<span style="color: var(--apple-purple); font-size: 1.5rem;">ms</span></div>
+            <div class="stat-label">Zero Server Latency</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Apple Bento Grid Feature Showcase -->
+    <section class="section-padding" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="text-center" style="max-width: 650px; margin: 0 auto 56px;">
+          <span class="eyebrow">Engineered For Excellence</span>
+          <h2 class="headline-section">Designed around how you think.</h2>
+          <p class="subheadline" style="margin-top: 14px;">
+            Every element in Cognitio is crafted to minimize cognitive friction, letting you concentrate on what truly counts: deep learning.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Card 1: Dynamic Custom Courses (Span 8) -->
+          <article class="bento-card bento-span-8">
+            <div class="bento-card-header">
+              <div class="card-icon-pill" style="color: var(--apple-blue);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+              </div>
+              <span class="pill-tag" style="background: rgba(41, 151, 255, 0.1); color: var(--apple-blue);">Dynamic DOM</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 10px;">
+              Personalized Course Architecture
+            </h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; max-width: 540px; margin-bottom: 24px;">
+              No pre-seeded dummy courses or generic placeholders. Begin with a clean canvas, add your exact semester curriculum with custom color badges, credit hours, and instructors, and manage study tasks tied directly to them.
+            </p>
+            <div style="margin-top: auto;">
+              <a href="planner.html" class="btn btn-secondary btn-sm">Explore Planner &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 2: Apple Watch-inspired Focus Timer (Span 4) -->
+          <article class="bento-card bento-span-4">
+            <div class="bento-card-header">
+              <div class="card-icon-pill" style="color: var(--apple-orange);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <span class="pill-tag" style="background: rgba(255, 159, 10, 0.1); color: var(--apple-orange);">Focus Hub</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 10px;">
+              Pomodoro Engine
+            </h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Smooth circular countdown with Web Audio API chime synthesis. Effortlessly toggle between 25-min sprints, short breaks, and long recovery periods.
+            </p>
+            <div style="margin-top: auto;">
+              <a href="timer.html" class="btn btn-secondary btn-sm">Start Focus &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 3: Active Recall Philosophy (Span 4) -->
+          <article class="bento-card bento-span-4">
+            <div class="bento-card-header">
+              <div class="card-icon-pill" style="color: var(--apple-purple);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <span class="pill-tag" style="background: rgba(191, 90, 242, 0.1); color: var(--apple-purple);">Cognitive Science</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 10px;">
+              Scientifically Proven
+            </h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Ground your study habits in spaced repetition, active recall, and the Feynman technique. Learn how to retain computer science concepts permanently.
+            </p>
+            <div style="margin-top: auto;">
+              <a href="about.html" class="btn btn-secondary btn-sm">Read Science &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 4: Client-side Form Validation & Support (Span 8) -->
+          <article class="bento-card bento-span-8">
+            <div class="bento-card-header">
+              <div class="card-icon-pill" style="color: var(--apple-green);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <span class="pill-tag" style="background: rgba(48, 209, 88, 0.1); color: var(--apple-green);">Interactive FAQ</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 10px;">
+              Student Support & Interactive Desk
+            </h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; max-width: 540px; margin-bottom: 24px;">
+              Equipped with real-time regex client-side form validation, immediate user feedback badges, and an interactive animated accordion resolving common study dilemmas.
+            </p>
+            <div style="margin-top: auto;">
+              <a href="contact.html" class="btn btn-secondary btn-sm">Visit Helpdesk &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Interactive Productivity Carousel Slider -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="text-center" style="max-width: 650px; margin: 0 auto 40px;">
+          <span class="eyebrow">Proven Study Wisdom</span>
+          <h2 class="headline-section">Strategies from top achievers.</h2>
+          <p class="subheadline" style="margin-top: 14px;">
+            Actionable productivity insights to guide your daily revision cycles.
+          </p>
+        </div>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-track-container">
+            <div id="tipsCarouselTrack" class="carousel-track">
+              <!-- Slide 1 -->
+              <div class="carousel-slide">
+                <div>
+                  <span class="slide-badge" style="background: rgba(41, 151, 255, 0.15); color: var(--apple-blue);">
+                    Active Recall
+                  </span>
+                  <p class="slide-quote">
+                    "Testing yourself repeatedly beats re-reading notes 10 to 1. Before reviewing a lecture, write down everything you remember on a blank page."
+                  </p>
+                </div>
+                <div class="slide-author">
+                  <div class="author-avatar">CS</div>
+                  <div class="author-info">
+                    <h4>Dr. Barbara Oakley</h4>
+                    <p>Author of 'A Mind for Numbers' & Learning How to Learn</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-slide">
+                <div>
+                  <span class="slide-badge" style="background: rgba(48, 209, 88, 0.15); color: var(--apple-green);">
+                    Time-Blocking
+                  </span>
+                  <p class="slide-quote">
+                    "Decide what you are going to work on before you open your laptop. A 25-minute sprint with zero notification tabs accomplishes more than three hours of distracted multi-tasking."
+                  </p>
+                </div>
+                <div class="slide-author">
+                  <div class="author-avatar" style="background: linear-gradient(135deg, #30d158, #0077ed);">CN</div>
+                  <div class="author-info">
+                    <h4>Cal Newport</h4>
+                    <p>Computer Science Professor, Georgetown University</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-slide">
+                <div>
+                  <span class="slide-badge" style="background: rgba(191, 90, 242, 0.15); color: var(--apple-purple);">
+                    The Feynman Technique
+                  </span>
+                  <p class="slide-quote">
+                    "If you cannot explain a data structure or algorithm to an eight-year-old in plain language, you have not truly mastered it. Identify the gaps in your explanation."
+                  </p>
+                </div>
+                <div class="slide-author">
+                  <div class="author-avatar" style="background: linear-gradient(135deg, #bf5af2, #ff2d55);">RF</div>
+                  <div class="author-info">
+                    <h4>Richard Feynman</h4>
+                    <p>Theoretical Physicist & Nobel Laureate</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="carousel-slide">
+                <div>
+                  <span class="slide-badge" style="background: rgba(255, 159, 10, 0.15); color: var(--apple-orange);">
+                    Spaced Repetition
+                  </span>
+                  <p class="slide-quote">
+                    "Memory decays exponentially unless reinforced at calculated intervals. Review key concepts on day 1, day 3, day 7, and day 21 to lock them into long-term retention."
+                  </p>
+                </div>
+                <div class="slide-author">
+                  <div class="author-avatar" style="background: linear-gradient(135deg, #ff9f0a, #ffd60a); color: #000;">HE</div>
+                  <div class="author-info">
+                    <h4>Hermann Ebbinghaus</h4>
+                    <p>Pioneer in Cognitive Psychology & Memory</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="carousel-controls">
+            <button id="prevSlideBtn" class="carousel-nav-btn" aria-label="Previous slide">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+
+            <div id="carouselDots" class="carousel-dots">
+              <!-- Dynamically or statically synchronized dots -->
+              <button class="carousel-dot active" data-index="0" aria-label="Go to slide 1"></button>
+              <button class="carousel-dot" data-index="1" aria-label="Go to slide 2"></button>
+              <button class="carousel-dot" data-index="2" aria-label="Go to slide 3"></button>
+              <button class="carousel-dot" data-index="3" aria-label="Go to slide 4"></button>
+            </div>
+
+            <button id="nextSlideBtn" class="carousel-nav-btn" aria-label="Next slide">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Final Apple-Style Call to Action -->
+    <section class="section-padding-sm" style="text-align: center; border-top: 1px solid var(--border-subtle);">
+      <div class="container container-narrow">
+        <h2 class="headline-section" style="margin-bottom: 16px;">Step into deep focus today.</h2>
+        <p class="subheadline" style="margin-bottom: 32px;">
+          Set up your courses in under a minute, schedule your sprint tasks, and stay on top of your semester.
+        </p>
+        <a href="planner.html" class="btn btn-primary btn-lg">Launch Cognitio Planner</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       Global Apple-Style Minimalist Footer
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Assignment Info -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </span>
+            <span>Cognitio</span>
+          </a>
+          <p>
+            An intelligent, minimalist study planner and deep work suite built for computer science students with Cupertino precision.
+          </p>
+          <div style="margin-top: 16px;">
+            <span class="footer-academic-badge">
+              Web Technologies — BS CS F24
+            </span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Methodology</a></li>
+            <li><a href="planner.html" class="footer-link">Course Planner</a></li>
+            <li><a href="timer.html" class="footer-link">Focus Timer</a></li>
+            <li><a href="contact.html" class="footer-link">Support & FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Academic Highlights -->
+        <div>
+          <h4 class="footer-title">Academic Modules</h4>
+          <ul class="footer-links">
+            <li><a href="planner.html" class="footer-link">Course Enroller</a></li>
+            <li><a href="planner.html" class="footer-link">Sprint Checklist</a></li>
+            <li><a href="timer.html" class="footer-link">Pomodoro Engine</a></li>
+            <li><a href="about.html" class="footer-link">Cognitive Science</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Course Info -->
+        <div>
+          <h4 class="footer-title">Assignment Specs</h4>
+          <ul class="footer-links">
+            <li><span class="footer-link">Course: Web Tech</span></li>
+            <li><span class="footer-link">Instructor: Dr. Noman Shafi</span></li>
+            <li><span class="footer-link">Batch: BS CS F24</span></li>
+            <li><span class="footer-link">Pure HTML5, CSS3, JS</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Cognitio. Built by Mian Ahmed. Pure Static Implementation.</p>
+        <p>Faculty of Information & Technology</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
