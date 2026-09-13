@@ -1,7 +1,6 @@
 /**
  * Cognitio - Global Navigation Script
  * Course: Web Technologies (BS CS F24)
- * Instructor: Dr. Noman Shafi
  */
 
 document.addEventListener('DOMContentLoaded', () => {
