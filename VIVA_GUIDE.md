@@ -19,12 +19,11 @@ Semantic tags clearly describe their meaning to both the browser and the develop
 - `<header>`: Encloses the site brand logo, desktop navigation menu, and mobile trigger. Sticky on all pages.
 - `<nav>`: Designated navigation area containing internal links with `aria-label="Main Navigation"`.
 - `<main>`: The primary unique content of each page (`id="mainContent"`).
-- `<section>`: Thematic grouping of content (e.g., Hero Section, Bento Grid Showcase, Course Enroller, Timetable).
-- `<article>`: Self-contained, independently distributable content blocks (e.g., individual Bento cards, Course cards, FAQ accordion items).
+- `<section>`: Thematic grouping of content (e.g., Hero Section, Course Enroller, Task Sprint Hub).
+- `<article>`: Self-contained, independently distributable content blocks (e.g., Course cards, FAQ accordion items, Philosophy creed blocks).
 - `<aside>`: Secondary content; used for the mobile slide-out navigation drawer (`id="mobileNav"`) and toast alerts (`id="toastContainer"`).
 - `<footer>`: Closing landmark with academic credits, site map links, and copyright.
 - `<form>`: Structured user input collection with semantic `<label>`, `<input>`, `<select>`, `<textarea>`, and `<button type="submit">`.
-- `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`: Semantic tabular data structure for the weekly academic timetable.
 - `<ul>`, `<ol>`, `<li>`: Semantic unordered and ordered lists for tasks, steps, and links.
 
 ---
@@ -157,6 +156,7 @@ The examiner may ask you to modify something live to test whether you wrote and 
 - Duplicate one `<article class="accordion-item">...</article>` block inside `#faqAccordion`.
 - Change the header text, update `id="faq5Header"`, and update the text inside `.accordion-content`.
 
-### 4. "Add another row to the weekly timetable"
-- Open `planner.html`.
-- Inside `<tbody>`, add a new `<tr>` with a time slot in `<th>` and 5 `<td>` elements for Mon–Fri.
+### 4. "Add another focus duration preset button"
+- Open `timer.html`.
+- Inside `.preset-pill-group`, duplicate a button like `<button class="preset-pill" data-minutes="25">25m Sprint</button>`.
+- Change `data-minutes="90"` and label to `90m Deep Dive`. Save and test in browser.

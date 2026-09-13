@@ -41,7 +41,7 @@ Unlike generic templates, Cognitio is an original static web application featuri
 Cognitio/
 ├── index.html               # Home portal (Apple Hero, Feature Overview, Quick Actions)
 ├── about.html               # Cognitive Science & Interactive Technique Switcher
-├── planner.html             # Dynamic Course Manager (starts empty), Task Sprint & Timetable
+├── planner.html             # Dynamic Course Manager (starts empty) & Task Sprint Checklist
 ├── timer.html               # Apple Watch-style Pomodoro Focus Hub & Web Audio chime
 ├── contact.html             # Helpdesk, Real-time Regex Validation & Cupertino Accordion FAQ
 ├── css/
@@ -73,7 +73,6 @@ Cognitio/
 - **Custom Course Enroller (Starts 100% Empty):** No dummy data. Displays a clean empty state until the student enrolls courses via an accessible modal dialog.
 - **Course Management:** Students can add courses with customized color themes (Apple Blue, Green, Purple, Orange, Red, Teal), credit hours, instructors, and weekly schedules, or delete courses dynamically.
 - **Dynamic Study Sprint Checklist:** Add tasks linked directly to active enrolled courses with priorities and estimated focus minutes. Supports task completion toggling with strikethrough animations and task deletion.
-- **Semester Timetable (Semantic Table):** Semantic HTML5 `<table>` mapping weekly lectures and laboratory sessions across time windows.
 
 ### 4. Focus Hub (`timer.html`)
 - **Apple Watch-Inspired Dial:** Circular SVG progress ring dynamically calculated via `stroke-dashoffset` (`2 * π * r`).
