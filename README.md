@@ -30,7 +30,7 @@ Unlike generic templates, Cognitio is an original static web application featuri
 | **Organized CSS** | `css/style.css` (tokens, typography, layout, components) and `css/responsive.css` (adaptive breakpoints). |
 | **Flexbox & CSS Grid** | Flexbox for headers, navigation, cards, and pill controls; CSS Grid for dashboard Bento layouts, statistics, and course cards. |
 | **Responsive Design** | Custom media queries adapting seamlessly to desktop (>1024px), tablet (768px), and mobile (<480px) viewports. |
-| **JavaScript Interactivity** | Carousel slider, dynamic course manager, task sprint checklist, Pomodoro countdown engine, client-side regex form validation, and accordion FAQ. |
+| **JavaScript Interactivity** | Dynamic course manager, task sprint checklist, Pomodoro countdown engine, client-side regex form validation, interactive study technique switcher, and accordion FAQ. |
 | **Git & Version Control** | Disciplined feature-branch workflow merged into `main` with professional, descriptive commit messages. |
 
 ---
@@ -39,7 +39,7 @@ Unlike generic templates, Cognitio is an original static web application featuri
 
 ```
 Cognitio/
-├── index.html               # Home portal (Apple Hero, Bento Grid, Productivity Tips Carousel)
+├── index.html               # Home portal (Apple Hero, Feature Overview, Quick Actions)
 ├── about.html               # Cognitive Science & Interactive Technique Switcher
 ├── planner.html             # Dynamic Course Manager (starts empty), Task Sprint & Timetable
 ├── timer.html               # Apple Watch-style Pomodoro Focus Hub & Web Audio chime
@@ -48,7 +48,7 @@ Cognitio/
 │   ├── style.css            # Master stylesheet with CSS Custom Properties and Cupertino styling
 │   └── responsive.css       # Mobile & tablet adaptive breakpoint definitions
 ├── js/
-│   ├── main.js              # Global navigation, mobile drawer toggle, carousel, and toast alerts
+│   ├── main.js              # Global navigation, mobile drawer toggle, and toast alerts
 │   ├── planner.js           # Dynamic Course & Task DOM manipulation, modal controller, state persistence
 │   ├── timer.js             # Circular SVG Pomodoro engine, Web Audio synthesis, session logger
 │   └── validation.js        # Real-time contact form regex validation and interactive accordion FAQ
@@ -63,8 +63,7 @@ Cognitio/
 
 ### 1. Home (`index.html`)
 - **Cupertino Hero Section:** High-contrast headline typography with subtle gradient clip, quick-action pill buttons, and academic statistics counters.
-- **Bento Grid Feature Showcase:** Highlighting dynamic course architecture, Pomodoro focus integration, evidence-based study techniques, and client-side privacy.
-- **Interactive Productivity Carousel:** Vanilla JavaScript slider with Next/Prev navigation buttons, pagination indicator dots, auto-play rotation every 6 seconds, and pause-on-hover functionality.
+- **Direct Focus Call to Action:** Streamlined pathway directly leading students into their active study workflows without clutter.
 
 ### 2. About Methodology (`about.html`)
 - **Science of Learning:** Comprehensive exploration of active recall, the Ebbinghaus forgetting curve, spaced repetition, and deep work.
