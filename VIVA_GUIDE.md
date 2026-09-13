@@ -1,7 +1,6 @@
 # Viva Voce Preparation & Code Defense Guide — Cognitio
 
 > **Course:** Web Technologies (BS CS F24)  
-> **Instructor:** Dr. Noman Shafi  
 > **Author:** Mian Ahmed  
 > **Project:** Cognitio Academic Suite  
 
@@ -9,7 +8,7 @@
 
 ## 1. Core Semantic HTML Elements Used
 
-During the viva, Dr. Noman Shafi may ask why you used specific HTML elements:
+During your viva defense, you may be asked why you used specific HTML elements:
 
 - `<header>`: Contains the sticky top branding and navigation bar.
 - `<nav>`: Wraps navigation link lists (`<ul class="nav-links">`).

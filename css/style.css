@@ -9,7 +9,6 @@
   --primary-color: #0071e3;       /* Apple Blue */
   --primary-hover: #0077ed;
   --danger-color: #ff3b30;        /* Apple Red */
-  --success-color: #34c759;       /* Apple Green */
   --bg-page: #fbfbfd;             /* Clean Apple Light Background */
   --bg-card: #ffffff;             /* Pure White Card Surface */
   --text-main: #1d1d1f;           /* Deep Charcoal Text */
@@ -465,7 +464,7 @@ a:hover {
   display: block;
 }
 
-/* 13. Footer */
+/* 12. Footer */
 .site-footer {
   border-top: 1px solid var(--border-color);
   background: #ffffff;

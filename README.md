@@ -2,7 +2,6 @@
 
 > **Faculty of Information & Technology**  
 > **Course:** Web Technologies (BS CS F24 – Morning & Self Support)  
-> **Instructor:** Dr. Noman Shafi  
 > **Author:** Mian Ahmed  
 > **Assignment:** 01 — Multi-Page Static Website  
 > **GitHub Repository:** [https://github.com/mianahmed-cs/Cognitio](https://github.com/mianahmed-cs/Cognitio)
